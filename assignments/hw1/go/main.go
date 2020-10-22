@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 func shaFunc(w http.ResponseWriter, r *http.Request) {
@@ -50,6 +51,7 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 		result.HasError = true
 	} else {
 		num, err := strconv.Atoi(keys[0])
+		println(num)
 		if err != nil || num > 100 {
 			result.Result = "Error"
 			result.HasError = true
@@ -58,10 +60,14 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 			result.HasError = false
 		}
 	}
+
+	json.NewEncoder(w).Encode(result)
 }
 
 func readLine(num int) string {
-	return ""
+	content, _ := ioutil.ReadFile("./main/text.txt")
+	lines := strings.Split(fmt.Sprintf("%s", content), "\r\n") // In linux is '\n' i guess
+	return lines[num-1]
 }
 
 func main() {
