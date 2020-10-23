@@ -1,0 +1,13 @@
+POST http://localhost:8080/go/sha256
+Content-Type: application/json
+
+{
+  "num1": "100",
+  "num2": "10"
+}
+
+###
+GET http://localhost:8080/go/write?lineNumber=99
+Accept: application/json
+
+###
