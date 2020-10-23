@@ -52,7 +52,7 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 		result.HasError = true
 	} else { // request is fine
 		num, err := strconv.Atoi(keys[0])
-		if err != nil || num > 100 {
+		if err != nil || num > 100 || num < 1 {
 			result.Result = "Error"
 			result.HasError = true
 		} else { // 1 <= lineNumber <= 100
