@@ -78,7 +78,7 @@ func handleRequests() {
 }
 
 const port = ":8080"
-const fileName = "./main/text.txt"
+const fileName = "./text.txt"
 
 func main() {
 	handleRequests()
