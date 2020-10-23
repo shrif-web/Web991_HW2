@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -49,13 +50,12 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Url Param 'lineNumber' is missing")
 		result.Result = "Error"
 		result.HasError = true
-	} else {
+	} else { // request is fine
 		num, err := strconv.Atoi(keys[0])
-		println(num)
 		if err != nil || num > 100 {
 			result.Result = "Error"
 			result.HasError = true
-		} else {
+		} else { // 1 <= lineNumber <= 100
 			result.Result = readLine(num)
 			result.HasError = false
 		}
@@ -65,13 +65,21 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 }
 
 func readLine(num int) string {
-	content, _ := ioutil.ReadFile("./main/text.txt")
-	lines := strings.Split(fmt.Sprintf("%s", content), "\r\n") // In linux is '\n' i guess
+	content, _ := ioutil.ReadFile(fileName)
+	lines := strings.Split(fmt.Sprintf("%s", content), "\r\n")
 	return lines[num-1]
 }
 
-func main() {
+func handleRequests() {
+	fmt.Printf("server running on localhost%s", port)
 	http.HandleFunc("/go/sha256", shaFunc) // TODO method ?
 	http.HandleFunc("/go/write", writeFunc)
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(port, nil))
+}
+
+const port = ":8080"
+const fileName = "./main/text.txt"
+
+func main() {
+	handleRequests()
 }
