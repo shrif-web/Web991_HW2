@@ -27,7 +27,7 @@ func shaFunc(w http.ResponseWriter, r *http.Request) {
 	var result ResultType
 
 	if err1 != nil || err2 != nil {
-		result.Result = "Error"
+		result.Result = "Error- Invalid Input"
 		result.HasError = true
 	} else {
 		sumSha := sha256.Sum256([]byte(strconv.Itoa(num1 + num2)))
@@ -48,12 +48,12 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 	keys, ok := r.URL.Query()["lineNumber"]
 	if !ok || len(keys[0]) < 1 {
 		fmt.Println("Url Param 'lineNumber' is missing")
-		result.Result = "Error"
+		result.Result = "Error- Missing Param"
 		result.HasError = true
 	} else { // request is fine
 		num, err := strconv.Atoi(keys[0])
 		if err != nil || num > 100 || num < 1 {
-			result.Result = "Error"
+			result.Result = "Error- Invalid Input"
 			result.HasError = true
 		} else { // 1 <= lineNumber <= 100
 			result.Result = readLine(num)
@@ -71,13 +71,13 @@ func readLine(num int) string {
 }
 
 func handleRequests() {
-	fmt.Printf("server running on localhost%s", port)
+	fmt.Printf("server running on localhost%s", portAddress)
 	http.HandleFunc("/go/sha256", shaFunc) // TODO method ?
 	http.HandleFunc("/go/write", writeFunc)
-	log.Fatal(http.ListenAndServe(port, nil))
+	log.Fatal(http.ListenAndServe(portAddress, nil))
 }
 
-const port = ":8080"
+const portAddress = ":8080"
 const fileName = "./text.txt"
 
 func main() {
