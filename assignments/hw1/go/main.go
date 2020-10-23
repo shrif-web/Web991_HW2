@@ -75,19 +75,3 @@ func main() {
 	http.HandleFunc("/go/write", writeFunc)
 	http.ListenAndServe(":8080", nil)
 }
-
-// ResultType is ... (to avoid lint error)
-type ResultType struct {
-	Result   string `json:"result"`
-	HasError bool   `json:"hasError"`
-}
-
-// ShaRequestType is ...
-type ShaRequestType struct {
-	Num1 string `json:"num1"`
-	Num2 string `json:"num2"`
-}
-
-//myRouter := mux.NewRouter().StrictSlash(true)
-//myRouter.HandleFunc("/go/sha256", shaFunc).Methods("POST")
-//myRouter.HandleFunc("/go/write", writeFunc).Methods("GET")
