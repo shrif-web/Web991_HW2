@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"runtime"
 	"strconv"
 	"strings"
 )
@@ -66,20 +67,24 @@ func writeFunc(w http.ResponseWriter, r *http.Request) {
 
 func readLine(num int) string {
 	content, _ := ioutil.ReadFile(fileName)
-	lines := strings.Split(fmt.Sprintf("%s", content), "\r\n")
+	lines := strings.Split(fmt.Sprintf("%s", content), lineSeparator)
 	return lines[num-1]
 }
-
 func handleRequests() {
-	fmt.Printf("server running on localhost%s", portAddress)
+	fmt.Printf("server running on localhost%s\n", port)
 	http.HandleFunc("/go/sha256", shaFunc) // TODO method ?
 	http.HandleFunc("/go/write", writeFunc)
-	log.Fatal(http.ListenAndServe(portAddress, nil))
+	log.Fatal(http.ListenAndServe(port, nil))
 }
 
-const portAddress = ":8080"
-const fileName = "./text.txt"
+const port = ":8080"
+const fileName = ".//text.txt" // use absolute path in server before build
+
+var lineSeparator = "\n"
 
 func main() {
+	if runtime.GOOS == "windows" {
+		lineSeparator = "\r\n"
+	}
 	handleRequests()
 }
