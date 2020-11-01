@@ -10,14 +10,17 @@ app.use(express.json());
 // todo: remove /nodejs
 app.post('/sha256', (req, res) => {
   const hash = crypto.createHash('sha256');
-  var num1 = req.body.Num1;
-  var num2 = req.body.Num2;
+  var num1 = req.body.num1;
+  var num2 = req.body.num2;
+  num1 = parseInt(num1);
+  num2 = parseInt(num2);
+  console.log(`${num1} ${num2}`)
   if(!Number.isInteger(num1) || !Number.isInteger(num2)){
     console.log('invalid input...')
     res.statusCode = 400;
     res.json({
-      'Result' : 'Error- Invalid Input',
-      'HasError' : true
+      'result' : 'Error- Invalid Input',
+      'hasError' : true
     });
     return;
   }
@@ -27,8 +30,8 @@ app.post('/sha256', (req, res) => {
   console.log(`sum to encrypted by sha256: ${encryptedSum}`);
   res.statusCode = 200;
   res.json({
-    'Result' : encryptedSum,
-    'HasError' : false
+    'result' : encryptedSum,
+    'hasError' : false
   });
 });
 
@@ -39,8 +42,8 @@ app.get('/write', (req, res) => {
     console.log('Error- Missing Param');
     res.statusCode = 400;
     res.json({
-      'Result' : 'Error- Missing Param',
-      'HasError' : true
+      'result' : 'Error- Missing Param',
+      'hasError' : true
     });
     return;
   }
@@ -48,8 +51,8 @@ app.get('/write', (req, res) => {
     console.log('Error- Invalid Input');
     res.statusCode = 400;
     res.json({
-      'Result' : 'Error- Invalid Input',
-      'HasError' : true
+      'result' : 'Error- Invalid Input',
+      'hasError' : true
     });
     return;
   }
@@ -64,8 +67,8 @@ app.get('/write', (req, res) => {
     console.log(`read line: ${readLine}`);
     res.statusCode = 200;
     res.json({
-      'Result' : readLine,
-      'HasError' : false
+      'result' : readLine,
+      'hasError' : false
     });
     });
 });
