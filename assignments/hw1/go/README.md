@@ -8,5 +8,13 @@ Package main consists of two _GO_ files:
       - /write
          - _accepts_ a line number between 1 and 100 (In a GET request url params)
          - _returns_ the according line in text.txt file
+
 ### Http Request samples
-Two samples for appropriate http requests can be found in sampleRequests.http
+Two samples for appropriate http requests and server responses can be found in [`sampleRequests.http`](sampleRequests.http)
+
+### Build
+You can build main package using:
+  ```bash
+  go build ./main
+  ```
+  
