@@ -1,5 +1,5 @@
 ## NGINX Configuration
-The following configurations must be done in `nginx.conf`.</br>
+The following configurations are present in [`nginx.conf`](/assignments/hw1/nginx/nginx.conf).</br>
 In order to serve our index.html file to client, the following syntax is used:
 ```NGINX
 location / {
