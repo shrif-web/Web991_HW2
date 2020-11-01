@@ -13,6 +13,6 @@ Accept: application/json
 ### Server Response:
 200 OK application/json
 {
-   "result": "corresponding result"
+   "result": "corresponding result",
    "hasError": "false if there is no error else true"
 }
