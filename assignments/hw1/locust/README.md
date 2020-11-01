@@ -20,6 +20,7 @@ You can run locust script using:
 locust --tags [Tag [Tag ...]] --exclude-tags [Tag [Tag ...]]
 ```
 **Note**: excluding has a higher priority than including if a task has two tags and one of them is excluded and one of them is included then it won't be excecuted.
+
 **Note**: if you want to run locust from outside of the directory you can use:
 ```bash
 locust -f [Path-To-Directory]
