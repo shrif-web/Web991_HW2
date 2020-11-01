@@ -1,13 +1,14 @@
-nginx.conf file for nginx settings is in this folder.</br>
-for serving our index.html we use syntax below (`addr` is address to front folder)
+## NGINX Configuration
+The following configurations must be done in `nginx.conf`.</br>
+In order to serve our index.html file to client, the following syntax is used:
 ```NGINX
 location / {
-	root addr;
+	root <path/to/frontend/files>;
 	index index.html;
 }
 ```
-**important note:** each folder in the path used for root must have read premission index.html is not severd correctly and the error "403 forbidden" is encountered.
-for location /go/ we use code below to pass the command to port `8080`.
+**Note:** Every folder in the path used for root must have read permission, otherwise index.html won't be served correctly and the error "403 forbidden" is encountered.
+for location /go/ we use code below to pass the command to port `8080` (on which _Go_ service is running).
 
 ```NGINX
 location /go/ {
@@ -16,7 +17,7 @@ location /go/ {
 	proxy_pass http://127.0.0.1:8080/;
 }
 ```
-the same for nodejs and port `3000`.
+The same is done for _Nodejs_ service which is running on port `3000`.
 
 ```NGINX
 location /nodejs/ {
