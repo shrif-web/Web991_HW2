@@ -37,10 +37,10 @@ self.client.post("/[backend]/sha256", {"num1": "12","num2":"13"})
 test results are in included in [tests](assignments/hw1/locust/tests) directory. we have tested programs using 1000 users that 150 of them spawned every second.
 
 - resutl for node/sha256
-![](assignments/hw1/locust/tests/node_sha)
+![](assignments/hw1/locust/tests/node_sha.png)
 - result for node/write
-![](assignments/hw1/locust/tests/node_write)
+![](assignments/hw1/locust/tests/node_write.png)
 - result for go/sha256
-![](assignments/hw1/locust/tests/go_sha)
+![](assignments/hw1/locust/tests/go_sha.png)
 - result for go/write
-![](assignments/hw1/locust/tests/go_write)
+![](assignments/hw1/locust/tests/go_write.png)
