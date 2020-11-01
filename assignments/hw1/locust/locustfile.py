@@ -13,7 +13,7 @@ class QuickstartUser(HttpUser):
     @tag('write')
     @task
     def write_node(self):
-        self.client.get("/nodejs/write?lineNumber="+"10")
+        self.client.get("/nodejs/write?lineNumber=12")
 
     @tag('go')
     @tag('sha')
