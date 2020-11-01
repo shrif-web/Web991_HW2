@@ -1,0 +1,69 @@
+#1.sha256)
+### Request:
+POST http://localhost:3000/nodejs/sha256
+Content-Type: application/json
+
+{
+  "num1": "100",
+  "num2": "10"
+}
+
+### Response:
+200 OK application/json
+{
+    "result": "ff2ccb6ba423d356bd549ed4bfb76e96976a0dcde05a09996a1cdb9f83422ec4",
+    "hasError": false
+}
+
+#2.sha256)
+### Request:
+POST http://localhost:3000/nodejs/sha256
+Content-Type: application/json
+
+{
+    "num1": 10,
+    "num2": "hello"
+}
+
+### Response:
+400 BadRequest application/json
+{
+    "result": "Error- Invalid Input",
+    "hasError": true
+}
+
+#1.write)
+### Request:
+GET http://localhost:3000/nodejs/write?lineNumber=10
+Accept: application/json
+
+### Server Response:
+200 OK application/json
+{
+    "result": "This is line 10",
+    "hasError": false
+}
+
+#2.write)
+### Request:
+GET http://localhost:3000/nodejs/write
+Accept: application/json
+
+### Server Response:
+400 BadRequest application/json
+{
+    "result": "Error- Missing Param",
+    "hasError": true
+}
+
+#3.write)
+### Request:
+GET http://localhost:3000/nodejs/write?lineNumber=120
+Accept: application/json
+
+### Server Response:
+400 BadRequest application/json
+{
+    "result": "Error- Invalid Input",
+    "hasError": true
+}
