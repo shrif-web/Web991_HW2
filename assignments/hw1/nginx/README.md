@@ -10,6 +10,7 @@ location / {
 * important note: each folder in the path used for root must have read premission index.html is not severd correctly and the error "403 forbidden" is encountered.
 </br>
 for location /go/ we use code below to pass the command to port ```8080```.
+
 ```
 location /go/ {
                 proxy_set_header Host $host;
@@ -18,6 +19,7 @@ location /go/ {
 }
 ```
 the same for nodejs and prot ```3000```.
+
 ```
 location /nodejs/ {
                 proxy_set_header Host $host;
