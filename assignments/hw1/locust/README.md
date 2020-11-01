@@ -1,10 +1,10 @@
 ## Locust
 ### Install
-locust is installed by use of the command below:
+locust can be installed by use of the command below:
 ```bash
 pip3 install locust
 ```
-after that installation can be checked by:
+after that, installation can be checked by:
 ```bash
 locust --version
 ```
@@ -25,11 +25,11 @@ locust -f [Path-To-Directory]
 ```
 **Note**: the request for write is:
 ```python
-self.client.get("/go/write?lineNumber=12")
+self.client.get("/[backend]/write?lineNumber=12")
 ```
 **Note**: the request for sha is:
 ```python
-self.client.post("/nodejs/sha256", {"num1": "12","num2":"13"})
+self.client.post("/[backend]/sha256", {"num1": "12","num2":"13"})
 ```
 ### Test Results
 test results also in folder tests. .....
