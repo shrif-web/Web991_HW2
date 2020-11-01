@@ -8,7 +8,7 @@ class QuickstartUser(HttpUser):
     @tag('sha')
     @task
     def sha256(self):
-        self.client.post("/nodejs/sha256", {"num1": "12","num2":"13"})
+        self.client.post("/nodejs/sha256", json={'num1':'12','num2':'13'})
     
     @tag('node')
     @tag('write')
@@ -20,7 +20,7 @@ class QuickstartUser(HttpUser):
     @tag('sha')
     @task
     def sha256_go(self):
-        self.client.post("/go/sha256", {"num1": "12","num2":"13"})
+        self.client.post("/go/sha256", json={"num1": "12","num2":"13"})
 
     @tag('go')
     @tag('write')
