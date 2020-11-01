@@ -1,9 +1,4 @@
-// const server = http.createServer((req, res) => {
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello World');
-// });
-
+const fs = require('fs')
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -12,7 +7,8 @@ const crypto = require('crypto');
 
 app.use(express.json());
 
-app.post('/nodejs/sha256', (req, res) => {
+// todo: remove /nodejs
+app.post('/sha256', (req, res) => {
   const hash = crypto.createHash('sha256');
   var num1 = req.body.Num1;
   var num2 = req.body.Num2;
@@ -33,14 +29,47 @@ app.post('/nodejs/sha256', (req, res) => {
   res.json({
     'Result' : encryptedSum,
     'HasError' : false
-  })  
+  });
 });
 
-app.get('/nodejs/write', (req, res) => {
-  res.statusCode = 200;
-  res.send('OK')
-})
+// todo: remove /nodejs
+app.get('/write', (req, res) => {
+  var lineNumber=req.query.lineNumber;
+  if(lineNumber === undefined){
+    console.log('Error- Missing Param');
+    res.statusCode = 400;
+    res.json({
+      'Result' : 'Error- Missing Param',
+      'HasError' : true
+    });
+    return;
+  }
+  if(lineNumber<1 || lineNumber>100){
+    console.log('Error- Invalid Input');
+    res.statusCode = 400;
+    res.json({
+      'Result' : 'Error- Invalid Input',
+      'HasError' : true
+    });
+    return;
+  }
+  console.log(`lineNumber: ${lineNumber}`);
+  fs.readFile('./text.txt', 'ascii', function (err,data) {
+      if (err) {
+      console.log(err);
+      return;
+    }
+    var splittedData=data.split('\n');
+    var readLine=splittedData[lineNumber-1];
+    console.log(`read line: ${readLine}`);
+    res.statusCode = 200;
+    res.json({
+      'Result' : readLine,
+      'HasError' : false
+    });
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
-})
+});
