@@ -13,7 +13,7 @@ this locust script has four tags (as listed):
    - node
    - go
    - write
-   - sha
+   - sha</br>
 You can run locust script using:
 ```bash
 locust --tags [Tag [Tag ...]] --exclude-tags [Tag [Tag ...]]
