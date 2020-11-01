@@ -12,9 +12,12 @@ Package main consists of two _GO_ files:
 ### Http Request samples
 Two samples for appropriate http requests and server responses can be found in [`sampleRequests.http`](sampleRequests.http)
 
-### Build
+### Build & Run
 You can build main package using:
   ```bash
   go build ./main
   ```
-  
+Doing so, the executable `main` file is created and can be run only using:
+```bash
+./main
+```
