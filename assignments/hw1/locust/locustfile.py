@@ -2,6 +2,7 @@ import time, random
 from locust import HttpUser, task, between, tag
 
 class QuickstartUser(HttpUser):
+    wait_time = between(1,2)
 
     @tag('node')
     @tag('sha')
