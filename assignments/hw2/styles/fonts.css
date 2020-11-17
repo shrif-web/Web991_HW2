@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Shabnam;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.woff2') format('woff2'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sahel;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Sahel;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sahel;
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+* {
+    font-family: Sahel, 'Courier New', Courier, monospace;
+}
