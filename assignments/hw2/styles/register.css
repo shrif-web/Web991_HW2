@@ -73,3 +73,16 @@
     margin-bottom: 12px;
     margin-right: 18px;
 }
+
+#image1 {
+    position: relative;
+}
+
+#formDiv {
+    position: relative;
+}
+
+
+/* #div1 {
+    position: relative;
+} */

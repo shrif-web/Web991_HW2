@@ -68,13 +68,13 @@ closeAlert = function() {
 }
 
 checkFormRegister = function() {
-    var alert = document.getElementById("alertContainer")
+    let alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('exampleInputPassword1').value;
-    var repeatPassword = document.getElementById('exampleInputPassword2').value;
-    var agreeTerms = document.getElementById('invalidCheck2').checked;
-    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('exampleInputPassword1').value;
+    let repeatPassword = document.getElementById('exampleInputPassword2').value;
+    let agreeTerms = document.getElementById('invalidCheck2').checked;
+    let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!email) {
         showAlert('ایمیل خالی می‌باشد.', 'danger')
     } else if (!emailRegex.test(email)) {
@@ -93,11 +93,11 @@ checkFormRegister = function() {
 }
 
 checkFormLogin = function() {
-    var alert = document.getElementById("alertContainer")
+    let alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('exampleInputPassword1').value;
-    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('exampleInputPassword1').value;
+    let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!email) {
         showAlert('ایمیل خالی می‌باشد.', 'danger')
     } else if (!emailRegex.test(email)) {
@@ -111,11 +111,45 @@ checkFormLogin = function() {
     } else {
         showAlert('ورود موفقیت آمیز بود', 'success')
     }
-
 }
 
 setup = function() {
     fillFormLogin();
+    // load animations
+    let start = Date.now();
+    let note = document.getElementById('note');
+    let timer = setInterval(frame, 20);
+    let navbar = document.getElementById('top-navbar');
+    let div1 = document.getElementById('div1');
+    let body = document.getElementById('body');
+    let password = document.getElementById('exampleInputPassword1');
+    let image = document.getElementById('image1');
+    let formDiv = document.getElementById('formDiv');
+
+    function frame() {
+        let duration = 1500;
+        let passedTime = Date.now() - start;
+        if (passedTime >= duration) {
+            clearInterval(timer);
+        } else {
+            navbar.style.opacity = passedTime / duration;
+            div1.style.height = passedTime / duration + '%';
+            // body.style.backgroundColor = `rgb(${232 * passedTime / duration}, ${239 * passedTime / duration}, 247)`;
+            image.style.left = -duration / 5 + passedTime / 5 + 'px';
+            image.style.opacity = passedTime / duration;
+            formDiv.style.opacity = passedTime / duration;
+            formDiv.style.right = -duration / 5 + passedTime / 5 + 'px';
+            // navbar.style. = passedTime / 10 + 'px';
+            // password.style.width = passedTime / 10;
+            // password.style.left = passedTime / 10;
+            // note.innerText = password.style.left;
+            // note.innerText = password.style.opacity;
+        }
+    }
+}
+
+backToHome = function() {
+    window.location.href = "file:///home/sepehr/university/13991/Web%20Programming/repository/WebFall2020/assignments/hw2/index.html"
 }
 
 changeDir = function(elem) {
