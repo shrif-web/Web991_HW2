@@ -60,7 +60,7 @@
 @media (max-width:600px) {
     /* your conditional / responsive CSS inside this condition */
     #image1 {
-        visibility: hidden;
+        display: none;
     }
 }
 
@@ -73,3 +73,116 @@
     margin-bottom: 12px;
     margin-right: 18px;
 }
+body {
+    background-color: #E8EFF7;
+    text-align: right;
+}
+body.dark-mode {
+    background-color: #373434;
+}
+body.dark-mode > nav {
+    background-color: #373434;
+}
+#logregdiv {
+    float: left;
+    width: 40%;
+    height: 360px;
+    background-color:white;
+}
+body.dark-mode #logregdiv{
+    background-color: #4e4444;
+}
+
+body.dark-mode > nav > div > a {
+    color: #bd4040;
+}
+body.dark-mode > nav > div > a:hover {
+    color:#d31919;
+}
+#blue-logo{
+    display: block;
+}
+body.dark-mode #blue-logo {
+    display: none;
+}
+body.dark-mode #red-logo {
+    display: block;
+}   
+#red-logo {
+    display: none;
+}
+
+#registerTab{
+    border-color: white;
+    background-color: white;
+}
+body.dark-mode #registerTab{
+    border-color: #4e4444;
+    background-color: #4e4444;
+    color: #fa7777;
+}
+
+#registerTab.active {
+    background-color: rgb(32, 68, 145);
+    color: white;
+}
+body.dark-mode #registerTab.active{
+    background-color: #bd4040;
+    color: white;
+}
+
+#loginTab{
+    border-color: white;
+    background-color: white;
+}
+body.dark-mode #loginTab{
+    border-color: #4e4444;
+    background-color: #4e4444;
+    color: #fa7777;
+}
+
+#loginTab.active {
+    background-color: rgb(32, 68, 145);
+    color: white;
+}
+body.dark-mode #loginTab.active{
+    background-color: #bd4040;
+    color: white;
+}
+
+body.dark-mode #check-rules {
+    background-color:red;
+}
+body.dark-mode #check-rules-label{
+    color:white;
+}
+#submit-button {
+    background-color: rgb(32, 68, 145);
+    border-color: rgb(32, 68, 145);
+
+}
+body.dark-mode #submit-button {
+    background-color: #bd4040;
+    border-color: #bd4040;
+}
+
+* {
+    transition: 0.3s;
+}
+
+
+#image-blue{
+    display: block;
+}
+body.dark-mode #image-blue {
+    display: none;
+}
+body.dark-mode #image-red {
+    display: block;
+}   
+#image-red {
+    display: none;
+}
+/* #return-home-icon{
+    transition: 0s;
+} */
