@@ -33,3 +33,11 @@
     -webkit-transition-duration: 1s; /* Safari */
     transition-duration: 1s;
 }
+
+@media (max-width:600px) {
+
+    /* your conditional / responsive CSS inside this condition */
+  
+    #image1 {visibility: hidden;}
+  
+  }
