@@ -5,39 +5,71 @@
     -o-animation: fadeIn ease 1s;
     -ms-animation: fadeIn ease 1s;
 }
+
 @keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @-o-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @-ms-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
 .fade {
-    -webkit-transition-duration: 1s; /* Safari */
+    -webkit-transition-duration: 1s;
+    /* Safari */
     transition-duration: 1s;
 }
 
 @media (max-width:600px) {
-
     /* your conditional / responsive CSS inside this condition */
-  
-    #image1 {visibility: hidden;}
-  
-  }
+    #image1 {
+        visibility: hidden;
+    }
+}
+
+.form-check-input {
+    text-align: right;
+}
+
+.form-check-label {
+    text-align: right;
+    margin-bottom: 12px;
+    margin-right: 18px;
+}
