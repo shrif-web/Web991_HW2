@@ -1,4 +1,4 @@
-fillFormRegister = function () {
+fillFormRegister = function() {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     document.getElementById("logRegForm").innerHTML = `<form>
@@ -27,9 +27,9 @@ fillFormRegister = function () {
     element = document.getElementById("loginTab")
     element.classList.remove("active")
     element.style.backgroundColor = "#acb3fa"
-    
+
 }
-fillFormLogin = function () {
+fillFormLogin = function() {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     document.getElementById("logRegForm").innerHTML = `<form>
@@ -51,7 +51,7 @@ fillFormLogin = function () {
     element.style.backgroundColor = "#acb3fa"
 }
 
-showAlert = function (str, type) {
+showAlert = function(str, type) {
     var element = document.getElementById("alertContainer")
     element.innerHTML = `
     <div id = "alertBox1" class="alert alert-${type} alert-dismissible fade show fade-in  align-item-center form-group mx-sm-3" role="alert">
@@ -62,12 +62,12 @@ showAlert = function (str, type) {
     </div>`
 }
 
-closeAlert = function () {
+closeAlert = function() {
     var element = document.getElementById('alertBox1')
     element.alert('close')
 }
 
-checkFormRegister = function () {
+checkFormRegister = function() {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     var email = document.getElementById('email').value;
@@ -75,62 +75,50 @@ checkFormRegister = function () {
     var repeatPassword = document.getElementById('exampleInputPassword2').value;
     var agreeTerms = document.getElementById('invalidCheck2').checked;
     var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(!email){
-        showAlert('ایمیل خالی می‌باشد.','danger')
-    }
-    else if (!emailRegex.test(email)) {
-        showAlert('فرمت ایمیل ورودی صحیح نمی‌باشد','danger');
-    }
-    else if (!password){
-        showAlert('رمز عبور خالی می‌باشد.','danger')
-    }
-    else if (!repeatPassword){
-        showAlert('تکرار رمز عبور خالی می‌باشد.','danger')
-    }
-    else if (password != repeatPassword) {
-        showAlert('رمز عبور و تکرار آن یکسان نمی‌باشد','danger');
-    }
-    else if (!agreeTerms) {
-        showAlert('لطفا قوانین و شرایط را قبول کنید','danger');
-    }
-    else{
-        showAlert('ثبت‌نام موفقیت آمیز بود','success')
+    if (!email) {
+        showAlert('ایمیل خالی می‌باشد.', 'danger')
+    } else if (!emailRegex.test(email)) {
+        showAlert('فرمت ایمیل ورودی صحیح نمی‌باشد', 'danger');
+    } else if (!password) {
+        showAlert('رمز عبور خالی می‌باشد.', 'danger')
+    } else if (!repeatPassword) {
+        showAlert('تکرار رمز عبور خالی می‌باشد.', 'danger')
+    } else if (password != repeatPassword) {
+        showAlert('رمز عبور و تکرار آن یکسان نمی‌باشد', 'danger');
+    } else if (!agreeTerms) {
+        showAlert('لطفا قوانین و شرایط را قبول کنید', 'danger');
+    } else {
+        showAlert('ثبت‌نام موفقیت آمیز بود', 'success')
     }
 }
 
-checkFormLogin = function () {
+checkFormLogin = function() {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     var email = document.getElementById('email').value;
     var password = document.getElementById('exampleInputPassword1').value;
     var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(!email){
-        showAlert('ایمیل خالی می‌باشد.','danger')
-    }
-    else if (!emailRegex.test(email)) {
-        showAlert('فرمت ایمیل ورودی صحیح نمی‌باشد','danger');
-    }
-    else if (!password){
-        showAlert('رمز عبور خالی می‌باشد.','danger')
-    }
-    else if (email != '1111@gmail.com') {
-        showAlert('ایمیل ورودی صحیح نمی‌باشد','danger');
-    }
-    else if (password != '1111') {
-        showAlert('رمز عبور صحیح نمی‌باشد‌','danger');
-    }
-    else{
-        showAlert('ورود موفقیت آمیز بود','success')
+    if (!email) {
+        showAlert('ایمیل خالی می‌باشد.', 'danger')
+    } else if (!emailRegex.test(email)) {
+        showAlert('فرمت ایمیل ورودی صحیح نمی‌باشد', 'danger');
+    } else if (!password) {
+        showAlert('رمز عبور خالی می‌باشد.', 'danger')
+    } else if (email != '1111@gmail.com') {
+        showAlert('ایمیل ورودی صحیح نمی‌باشد', 'danger');
+    } else if (password != '1111') {
+        showAlert('رمز عبور صحیح نمی‌باشد‌', 'danger');
+    } else {
+        showAlert('ورود موفقیت آمیز بود', 'success')
     }
 
 }
 
 
-changeDir = function(elem){
-    if(!elem.value){
+changeDir = function(elem) {
+    if (!elem.value) {
         elem.dir = "rtl"
-    }
-    else {
+    } else {
         elem.dir = "ltr"
     }
 }
