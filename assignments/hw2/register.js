@@ -114,6 +114,9 @@ checkFormLogin = function() {
 
 }
 
+setup = function() {
+    fillFormLogin();
+}
 
 changeDir = function(elem) {
     if (!elem.value) {
