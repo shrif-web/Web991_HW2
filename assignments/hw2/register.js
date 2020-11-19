@@ -29,7 +29,7 @@ fillFormRegister = function () {
 fillFormLogin = function () {
     document.getElementById("logRegForm").innerHTML = `<form>
         <div class = "form-group align-items-center mx-sm-3">
-            <div class="form-group" style="margin-top: 88px;">
+            <div class="form-group" style="margin-top:55px;">
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل">
             </div>
             <div class="form-group">
