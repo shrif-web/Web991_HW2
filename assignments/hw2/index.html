@@ -11,45 +11,44 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
     <link rel="icon" type="image/x-icon" href="./assets/multi_favicon/favicon-32x32.png"> <!-- TODO -->
     <script src="./scripts.js"></script>
+    <!--    <script type="text/javascript" src=./assets/table-data.json"></script>-->
 </head>
 
 <body dir="rtl" onload="setup()">
 <nav class="navbar navbar-expand-sm shadow">
-    <a class="navbar-brand" style="width: 300px; text-align: right; padding-right: 10px; padding-top: 0%;" href="#">
-        <img src="./assets/blue_logo.png" height="60px" alt="" loading="lazy"/>
+    <a class="navbar-brand" href="#">
+        <img id="logo" src="./assets/blue_logo.png" height="60px" alt=""/>
     </a>
     <div>
         <ul class="navbar-nav flex-grow">
             <li class="nav-item">
-                <a class="nav-link" href="#">خانه</a> <!-- <span class="sr-only">(current)</span> -->
+                <a class="nav-link" href="#" id="homePage">خانه</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">داده‌ها</a>
+                <a class="nav-link" href="#" id="dataPage">داده‌ها</a>
             </li>
         </ul>
     </div>
 
     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-        <button class="btn btn-primary"
-                style="margin-right: 10px; margin-left: 20px; width: 120px; border-width: 3px;">ثبت
+        <button class="btn btn-primary" id="signupButton"
+                style="margin-right: 10px; margin-left: 20px;">ثبت
             نام
         </button>
-        <button class="btn btn-outline-primary" id="loginButton"
-                style="width: 120px; border-width: 3px;">ورود
-        </button>
+        <button class="btn btn-outline-primary" id="loginButton">ورود</button>
     </div>
 </nav>
-<span class="sidebar">
-        <p><b>اعضای تیم</b></p>
-        <ul>
-            <li>علیرضا</li>
-            <li>سپهر</li>
-            <li>پرهام</li>
-        </ul>
-        <br>
-        <p><b>تنظیمات</b></p>
+<div class="sidebar">
+    <p><b>اعضای تیم</b></p>
+    <ul>
+        <li>علیرضا</li>
+        <li>سپهر</li>
+        <li>پرهام</li>
+    </ul>
+    <br>
+    <p><b>تنظیمات</b></p>
 
-        <span class="custom-control custom-switch">
+    <span class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="customSwitches" style="position: inherit;">
             <label class="custom-control-label" for="customSwitches" style="padding-left: 50px;">حالت شب</label>
         </span>
@@ -57,14 +56,20 @@
     <input type="checkbox" name="public">
     <label>Semantic UI</label>
 </div> -->
-    </span>
-<span style="display: inline-flex; position: static; margin-top: 30px ;margin-left: 100px">
-<div class="scrollbar scrollbar-primary">
+</div>
+<div class="mainPanel">
+    <div class="container" dir="ltr" style="margin-top: 20px">
+        <div class="scrollbar scrollbar-primary">
             <div class="cards" id="dataGrid" style="width: 70%; position:relative;"></div>
+            <div class="tableDiv" dir="rtl" id="dataTable" style="width: 100vh; position:relative;"></div>
+            <div id="panelButtons">
+                <button class="btn btn-outline-primary">قبلی</button>
+                <button class="btn btn-outline-primary">بعدی</button>
+            </div>
+        </div>
+    </div>
 
 </div>
-
-    </span>
 
 
 </body>

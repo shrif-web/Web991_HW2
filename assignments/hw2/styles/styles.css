@@ -1,3 +1,8 @@
+body {
+    overflow: hidden;
+    transition: 0.3s;
+}
+
 .navbar {
     background-color: #E8EFF7;
     position: sticky !important;
@@ -7,6 +12,51 @@
     z-index: 1030;
 }
 
+.navbar-brand {
+    width: 300px;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 0;
+}
+
+nav > div > .btn-primary,
+nav > div > .btn-outline-primary {
+    width: 120px;
+    border-width: 3px;
+    border-color: #186AA5;
+}
+
+nav > div > .btn-primary {
+    background-color: #186AA5;
+}
+
+nav > div > .btn-outline-primary {
+    color: #186AA5;
+}
+
+.nav-item > a {
+    color: #186AA5;
+}
+
+.sidebar {
+    width: 300px;
+    height: 100%;
+    z-index: 1;
+    right: 0;
+    position: fixed;
+    background-color: #186AA5;
+    color: white;
+    font-size: large;
+    text-align: right;
+    justify-content: center;
+    padding-top: 50px;
+    padding-right: 50px;
+}
+
+.mainPanel {
+    margin-right: 300px;
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -14,69 +64,96 @@
     grid-gap: 1rem;
 }
 
-/*.card {*/
-/*    border: 2px solid #e7e7e7;*/
-/*    border-radius: 4px;*/
-/*    padding: .5rem;*/
-/*}*/
-
-body {
-    /*overflow: hidden;*/
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
 }
 
-.sidebar {
-    width: 300px;
-    height: 100%;
+.tableDiv {
+    text-align: center;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #E8EFF7;
+}
+
+.table-striped > thead {
     background-color: #186AA5;
     color: white;
-    font-size: large;
-    display: inherit;
-    position: fixed;
-    text-align: right;
-    justify-content: center;
-    padding-top: 50px;
-    padding-right: 50px;
 }
 
-/*!* width *!*/
-/*::-webkit-scrollbar {*/
-/*    width: 10px;*/
-/*}*/
+.table-striped > tbody > tr > td,
+.table-striped > thead > tr > th {
+    border: 1px solid #D1E4F3;
+}
 
-/*!* Track *!*/
-/*::-webkit-scrollbar-track {*/
-/*    border-radius: 10px;*/
-/*}*/
+#panelButtons {
+    display: none; /* changes to flex in panels */
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
 
-/*!* Handle *!*/
-/*::-webkit-scrollbar-thumb {*/
-/*    background: blue;*/
-/*    border-radius: 10px;*/
-/*}*/
-
-/*!* Handle on hover *!*/
-/*::-webkit-scrollbar-thumb:hover {*/
-/*    background: #b30000;*/
-/*}*/
+#panelButtons > button {
+    color: #186AA5;
+    border-color: #186AA5;
+    border-width: 2px;
+}
 
 .scrollbar {
     margin-left: 30px;
     float: left;
     height: 600px;
-
     overflow-y: scroll;
     margin-bottom: 25px;
+    padding: 5px;
 }
 
 .scrollbar-primary::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F5F5F5; }
+    width: 8px;
+    background: none;
+}
 
 .scrollbar-primary::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #186AA5; }
+    background-color: lightgray;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb:hover {
+    background-color: #186AA5;
+}
 
 .scrollbar-primary {
     scrollbar-color: #186AA5 #F5F5F5;
+}
+
+body.dark-mode {
+    background-color: #373434;
+}
+
+body.dark-mode > nav {
+    background-color: #1c1516;
+}
+
+body.dark-mode > .sidebar {
+    background-color: #241d1d;
+}
+
+body.dark-mode > nav > div > .btn-primary,
+body.dark-mode > nav > div > .btn-outline-primary {
+    border-color: #a20101;
+}
+
+body.dark-mode > nav > div > .btn-primary {
+    background-color: #a20101;
+}
+
+body.dark-mode > nav > div > .btn-outline-primary {
+    color: #a20101;
+}
+
+* {
+    transition: 0.3s;
 }

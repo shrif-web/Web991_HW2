@@ -13,20 +13,18 @@ fillFormRegister = function() {
                 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="تکرار رمز عبور" oninput="changeDir(this)">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
-                <label class="form-check-label" for="invalidCheck2">
+                <input id="check-rules" class="form-check-input" type="checkbox" value="">
+                <label id="check-rules-label" class="form-check-label" for="check-rules">
                   قوانین و شرایط را می‌پذیرم
                 </label>
             </div>              
-            <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="checkFormRegister()">ثبت نام</button>
+            <button id="submit-button" type="submit" class="btn btn-primary btn-sm btn-block" onclick="checkFormRegister()">ثبت نام</button>
         </div>
     </form>`
-    element = document.getElementById("registerTab")
+    var element = document.getElementById("registerTab")
     element.classList.add("active")
-    element.style.backgroundColor = "white"
     element = document.getElementById("loginTab")
     element.classList.remove("active")
-    element.style.backgroundColor = "#acb3fa"
 
 }
 fillFormLogin = function() {
@@ -40,15 +38,13 @@ fillFormLogin = function() {
             <div class="form-group">
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور" oninput="changeDir(this)">
             </div>
-            <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="checkFormLogin()">ورود</button>
+            <button id="submit-button" type="submit" class="btn btn-primary btn-sm btn-block" onclick="checkFormLogin()">ورود</button>
         </div>
     </form>`
-    var element = document.getElementById("loginTab")
-    element.classList.add("active")
-    element.style.backgroundColor = "white"
-    element = document.getElementById("registerTab")
+    var element = document.getElementById("registerTab")
     element.classList.remove("active")
-    element.style.backgroundColor = "#acb3fa"
+    element = document.getElementById("loginTab")
+    element.classList.add("active")
 }
 
 showAlert = function(str, type) {
@@ -70,11 +66,19 @@ closeAlert = function() {
 checkFormRegister = function() {
     let alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
+<<<<<<< HEAD
     let email = document.getElementById('email').value;
     let password = document.getElementById('exampleInputPassword1').value;
     let repeatPassword = document.getElementById('exampleInputPassword2').value;
     let agreeTerms = document.getElementById('invalidCheck2').checked;
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+=======
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('exampleInputPassword1').value;
+    var repeatPassword = document.getElementById('exampleInputPassword2').value;
+    var agreeTerms = document.getElementById('check-rules').checked;
+    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+>>>>>>> 495faa7d7bfc50b6802510a2f7b84a30c1924505
     if (!email) {
         showAlert('ایمیل خالی می‌باشد.', 'danger')
     } else if (!emailRegex.test(email)) {
@@ -158,4 +162,8 @@ changeDir = function(elem) {
     } else {
         elem.dir = "ltr"
     }
+}
+
+toggleDark = function(){
+    document.getElementById("main-body").classList.toggle("dark-mode")
 }
