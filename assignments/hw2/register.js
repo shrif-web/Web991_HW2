@@ -18,7 +18,7 @@ fillFormRegister = function () {
                   قوانین و شرایط را می‌پذیرم
                 </label>
             </div>              
-            <button id="submit-button" type="submit" class="btn btn-primary btn-sm btn-block" onclick="checkFormRegister()">ثبت نام</button>
+            <button id="submit-button" type="button" class="btn btn-primary btn-sm btn-block" onclick="checkFormRegister()">ثبت نام</button>
         </div>
     </form>`
     var element = document.getElementById("registerTab")
@@ -38,7 +38,7 @@ fillFormLogin = function () {
             <div class="form-group">
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور" oninput="changeDir(this)">
             </div>
-            <button id="submit-button" type="submit" class="btn btn-primary btn-sm btn-block" onclick="checkFormLogin()">ورود</button>
+            <button id="submit-button" type="button" class="btn btn-primary btn-sm btn-block" onclick="checkFormLogin()">ورود</button>
         </div>
     </form>`
     var element = document.getElementById("registerTab")
@@ -69,7 +69,7 @@ checkFormRegister = function () {
     let email = document.getElementById('email').value;
     let password = document.getElementById('exampleInputPassword1').value;
     let repeatPassword = document.getElementById('exampleInputPassword2').value;
-    let agreeTerms = document.getElementById('invalidCheck2').checked;
+    let agreeTerms = document.getElementById("check-rules").checked;
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!email) {
         showAlert('ایمیل خالی می‌باشد.', 'danger')
