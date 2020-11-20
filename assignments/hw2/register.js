@@ -177,7 +177,7 @@ backToHome = function () {
     note = document.getElementById('note')
     setTimeout(() => {
         // todo: change below line
-        window.location.href = "file:///home/sepehr/university/13991/Web%20Programming/repository/WebFall2020/assignments/hw2/index.html"
+        window.location.href = "./index.html"
     }, duration + 300);
 }
 

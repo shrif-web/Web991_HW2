@@ -210,6 +210,6 @@ body.dark-mode #image-red {
 }
 
 
-/* #return-home-icon{
-    transition: 0s;
-} */
+#return-home-text, #return-home-icon{
+    cursor: pointer;
+}
