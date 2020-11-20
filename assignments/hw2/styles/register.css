@@ -74,10 +74,6 @@
     margin-right: 18px;
 }
 
-#image1 {
-    position: relative;
-}
-
 #formDiv {
     position: relative;
 }
@@ -96,6 +92,7 @@ body.dark-mode>nav {
 }
 
 #logregdiv {
+    position: relative;
     float: left;
     width: 40%;
     height: 360px;
@@ -195,6 +192,7 @@ body.dark-mode #submit-button {
 }
 
 #image-blue {
+    position: relative;
     display: block;
 }
 
@@ -207,6 +205,7 @@ body.dark-mode #image-red {
 }
 
 #image-red {
+    position: relative;
     display: none;
 }
 

@@ -1,4 +1,4 @@
-fillFormRegister = function() {
+fillFormRegister = function () {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     document.getElementById("logRegForm").innerHTML = `<form>
@@ -27,7 +27,7 @@ fillFormRegister = function() {
     element.classList.remove("active")
 
 }
-fillFormLogin = function() {
+fillFormLogin = function () {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     document.getElementById("logRegForm").innerHTML = `<form>
@@ -47,7 +47,7 @@ fillFormLogin = function() {
     element.classList.add("active")
 }
 
-showAlert = function(str, type) {
+showAlert = function (str, type) {
     var element = document.getElementById("alertContainer")
     element.innerHTML = `
     <div id = "alertBox1" class="alert alert-${type} alert-dismissible fade show fade-in  align-item-center form-group mx-sm-3" role="alert">
@@ -58,27 +58,19 @@ showAlert = function(str, type) {
     </div>`
 }
 
-closeAlert = function() {
+closeAlert = function () {
     var element = document.getElementById('alertBox1')
     element.alert('close')
 }
 
-checkFormRegister = function() {
+checkFormRegister = function () {
     let alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
-<<<<<<< HEAD
     let email = document.getElementById('email').value;
     let password = document.getElementById('exampleInputPassword1').value;
     let repeatPassword = document.getElementById('exampleInputPassword2').value;
     let agreeTerms = document.getElementById('invalidCheck2').checked;
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-=======
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('exampleInputPassword1').value;
-    var repeatPassword = document.getElementById('exampleInputPassword2').value;
-    var agreeTerms = document.getElementById('check-rules').checked;
-    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
->>>>>>> 495faa7d7bfc50b6802510a2f7b84a30c1924505
     if (!email) {
         showAlert('ایمیل خالی می‌باشد.', 'danger')
     } else if (!emailRegex.test(email)) {
@@ -96,7 +88,7 @@ checkFormRegister = function() {
     }
 }
 
-checkFormLogin = function() {
+checkFormLogin = function () {
     let alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     let email = document.getElementById('email').value;
@@ -117,9 +109,12 @@ checkFormLogin = function() {
     }
 }
 
-setup = function() {
+setup = function () {
     fillFormLogin();
-    // load animations
+    loadStartingAnimation();
+}
+
+loadStartingAnimation = function () {
     let start = Date.now();
     let note = document.getElementById('note');
     let timer = setInterval(frame, 20);
@@ -127,8 +122,9 @@ setup = function() {
     let div1 = document.getElementById('div1');
     let body = document.getElementById('body');
     let password = document.getElementById('exampleInputPassword1');
-    let image = document.getElementById('image1');
-    let formDiv = document.getElementById('formDiv');
+    let imageBlue = document.getElementById('image-blue');
+    let imageRed = document.getElementById('image-red');
+    let logregdiv = document.getElementById('logregdiv');
 
     function frame() {
         let duration = 1500;
@@ -136,27 +132,56 @@ setup = function() {
         if (passedTime >= duration) {
             clearInterval(timer);
         } else {
+            note.innerText = passedTime;
             navbar.style.opacity = passedTime / duration;
-            div1.style.height = passedTime / duration + '%';
-            // body.style.backgroundColor = `rgb(${232 * passedTime / duration}, ${239 * passedTime / duration}, 247)`;
-            image.style.left = -duration / 5 + passedTime / 5 + 'px';
-            image.style.opacity = passedTime / duration;
-            formDiv.style.opacity = passedTime / duration;
-            formDiv.style.right = -duration / 5 + passedTime / 5 + 'px';
-            // navbar.style. = passedTime / 10 + 'px';
-            // password.style.width = passedTime / 10;
-            // password.style.left = passedTime / 10;
-            // note.innerText = password.style.left;
-            // note.innerText = password.style.opacity;
+            imageBlue.style.left = -duration / 5 + passedTime / 5 + 'px';
+            imageBlue.style.opacity = passedTime / duration;
+            logregdiv.style.opacity = passedTime / duration;
+            logregdiv.style.right = -duration / 5 + passedTime / 5 + 'px';
+            }
+    }
+}
+
+loadEndingAnimation = function (duration) {
+    let start = Date.now();
+    let note = document.getElementById('note');
+    let timer = setInterval(frame, 20);
+    let navbar = document.getElementById('top-navbar');
+    let div1 = document.getElementById('div1');
+    let body = document.getElementById('body');
+    let password = document.getElementById('exampleInputPassword1');
+    let imageBlue = document.getElementById('image-blue');
+    let imageRed=document.getElementById('image-red')
+    let logregdiv = document.getElementById('logregdiv');
+
+    function frame() {
+        let passedTime = Date.now() - start;
+        if (passedTime >= duration) {
+            clearInterval(timer);
+        } else {
+            note.innerText = passedTime;
+            navbar.style.opacity = 1 - passedTime / duration
+            imageBlue.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
+            imageBlue.style.opacity = 1 - passedTime / duration
+            imageRed.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
+            imageRed.style.opacity = 1 - passedTime / duration
+            logregdiv.style.right = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
+            logregdiv.style.opacity = 1 - passedTime / duration
         }
     }
 }
 
-backToHome = function() {
-    window.location.href = "file:///home/sepehr/university/13991/Web%20Programming/repository/WebFall2020/assignments/hw2/index.html"
+backToHome = function () {
+    let duration = 1500
+    loadEndingAnimation(duration)
+    note = document.getElementById('note')
+    setTimeout(() => {
+        // todo: change below line
+        window.location.href = "file:///home/sepehr/university/13991/Web%20Programming/repository/WebFall2020/assignments/hw2/index.html"
+    }, duration + 300);
 }
 
-changeDir = function(elem) {
+changeDir = function (elem) {
     if (!elem.value) {
         elem.dir = "rtl"
     } else {
@@ -164,6 +189,6 @@ changeDir = function(elem) {
     }
 }
 
-toggleDark = function(){
+toggleDark = function () {
     document.getElementById("main-body").classList.toggle("dark-mode")
 }

@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>تمرین 2 وب</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/register.css">
@@ -13,44 +14,37 @@
     <!-- TODO -->
     <script src="./register.js"></script>
     <script src="https://use.fontawesome.com/fe0ca54a73.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 
-<<<<<<< HEAD
-<body id="body" dir="rtl" onload="setup()" style="background-color:#E8EFF7;text-align: right;">
-    <nav class="navbar navbar-expand-sm" id="top-navbar">
-=======
-<body id="main-body" class = "dark-mode" dir="rtl" onload="setup()">
-    <nav class="navbar navbar-expand-sm">
->>>>>>> 495faa7d7bfc50b6802510a2f7b84a30c1924505
+<body id="main-body" class="" dir="rtl" onload="setup()">
+    <nav id="top-navbar" class="navbar navbar-expand-sm">
         <a class="navbar-brand" style="width: 300px; text-align: right; padding-right: 10px; padding-top: 0%;" href="#">
-            <img id="blue-logo"src="./assets/blue_logo.png" height="60px" alt="" loading="lazy" />
+            <img id="blue-logo" src="./assets/blue_logo.png" height="60px" alt="" loading="lazy" />
             <img id="red-logo" src="./assets/red_logo.png" height="60px" alt="" loading="lazy" />
         </a>
-<<<<<<< HEAD
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-            <a class="nav-link" href="file:///home/sepehr/university/13991/Web%20Programming/repository/WebFall2020/assignments/hw2/index.html">بازگشت به خانه<i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-=======
 
-        <div id = "return-home" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" >
-            <a class="nav-link" href="#">بازگشت به خانه<i id="return-home-icon" class="fa fa-chevron-left" aria-hidden="true"></i></a>
->>>>>>> 495faa7d7bfc50b6802510a2f7b84a30c1924505
+        <div id="return-home" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <a class="nav-link" onclick="backToHome()">بازگشت به خانه<i id="return-home-icon" class="fa fa-chevron-left"
+                    aria-hidden="true"></i></a>
         </div>
     </nav>
-    <button id="btn123" onclick="load()">click!</button>
+    <button id="btn123" onclick="load()">temp button</button>
     <p id="note">note</p>
     <div id="div1" style="margin:auto; width :50%; height: 100%; margin-top: 10%;">
         <div style="width: 60%; height:360px; float: left;" dir="ltr">
             <img id="image-blue" style=" width:100%; height: 360px;" src="./assets/register/register-blue.jpg">
             <img id="image-red" style=" width:100%; height: 360px;" src="./assets/register/register-red.png">
         </div>
-<<<<<<< HEAD
-        <div id="formDiv" style="float: left; width: 40%; height: 360px; background-color:white;">
-=======
         <div id="logregdiv">
->>>>>>> 495faa7d7bfc50b6802510a2f7b84a30c1924505
             <div>
                 <ul id="logreg-list" class="nav nav-tabs nav-fill" style="margin-left: 30px; border:0px;">
                     <li class="nav-item">
@@ -65,7 +59,7 @@
             <div id="alertContainer"></div>
         </div>
     </div>
-    <button onclick="toggleDark()"></button>
+    <button onclick="toggleDark()">dark mode</button>
 </body>
 
 </html>
