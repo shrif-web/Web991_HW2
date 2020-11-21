@@ -111,21 +111,23 @@ checkFormLogin = function () {
 
 setup = function () {
     fillFormLogin();
-    // loadStartingAnimation();
-    window.addEventListener("resize", ()=>{
-        if(screen.width<576){
-            document.getElementById("return-home").classList.remove("navbar-collapse")
-    
-        }
-        else{
-            document.getElementById("return-home").classList.add("navbar-collapse")
-        }
-    })
+    loadStartingAnimation();
+    setCollapse()
+    window.addEventListener("resize", setCollapse)
+}
+
+setCollapse = function() {
+    if(screen.width<576){
+        document.getElementById("return-home").classList.remove("navbar-collapse")
+
+    }
+    else{
+        document.getElementById("return-home").classList.add("navbar-collapse")
+    }
 }
 
 loadStartingAnimation = function () {
     let start = Date.now();
-    let note = document.getElementById('note');
     let timer = setInterval(frame, 20);
     let navbar = document.getElementById('top-navbar');
     let div1 = document.getElementById('div1');
@@ -141,10 +143,11 @@ loadStartingAnimation = function () {
         if (passedTime >= duration) {
             clearInterval(timer);
         } else {
-            note.innerText = passedTime;
             navbar.style.opacity = passedTime / duration;
             imageBlue.style.left = -duration / 5 + passedTime / 5 + 'px';
             imageBlue.style.opacity = passedTime / duration;
+            imageRed.style.left = -duration / 5 + passedTime / 5 + 'px';
+            imageRed.style.opacity = passedTime / duration;
             logregdiv.style.opacity = passedTime / duration;
             logregdiv.style.right = -duration / 5 + passedTime / 5 + 'px';
             }
