@@ -24,6 +24,7 @@
         url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.woff') format('woff'),
         url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.ttf') format('truetype');
     font-weight: bold;
+    unicode-range: U+30-39;
 }
 
 @font-face {
@@ -54,5 +55,5 @@
 }
 
 * {
-    font-family: Sahel, 'Courier New', Courier, monospace;
+    font-family: Sahel, Shabnam, 'Samim', 'Courier New', Courier, monospace;
 }
