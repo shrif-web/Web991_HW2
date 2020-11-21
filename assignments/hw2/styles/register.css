@@ -57,13 +57,6 @@
     transition-duration: 1s;
 }
 
-@media (max-width:600px) {
-    /* your conditional / responsive CSS inside this condition */
-    #image1 {
-        display: none;
-    }
-}
-
 .form-check-input {
     text-align: right;
 }
@@ -168,9 +161,11 @@ body.dark-mode #loginTab.active {
     background-color: #bd4040;
     color: white;
 }
-
-body.dark-mode #check-rules {
-    background-color: red;
+#check-rules:hover {
+    cursor: pointer;
+}
+body.dark-mode #check-rules{
+    color: red !important;
 }
 
 body.dark-mode #check-rules-label {
@@ -212,4 +207,15 @@ body.dark-mode #image-red {
 
 #return-home-text, #return-home-icon{
     cursor: pointer;
+}
+
+
+
+@media (max-width:600px) {
+    /* your conditional / responsive CSS inside this condition */
+    #img-container,#image-blue, #image-red,#note {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
 }

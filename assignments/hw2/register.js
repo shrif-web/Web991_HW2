@@ -2,23 +2,23 @@ fillFormRegister = function () {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     document.getElementById("logRegForm").innerHTML = `<form>
-        <div class = "form-group align-items-center mx-sm-3">
+        <div class = "form-group">
             <div class="form-group" style = "margin-top: 10px;">
-                <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ایمیل" oninput="changeDir(this)">
+                <input type="text" style="width:300px; margin-right:10px;" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ایمیل" oninput="changeDir(this)">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور" oninput="changeDir(this)">
+                <input type="password" style="width:300px; margin-right:10px;" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور" oninput="changeDir(this)">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="تکرار رمز عبور" oninput="changeDir(this)">
+                <input type="password" style="width:300px; margin-right:10px;" class="form-control" id="exampleInputPassword2" placeholder="تکرار رمز عبور" oninput="changeDir(this)">
             </div>
             <div class="form-check">
-                <input id="check-rules" class="form-check-input" type="checkbox" value="">
-                <label id="check-rules-label" class="form-check-label" for="check-rules">
+                <input id="check-rules" style="margin-right:10px;" class="form-check-input" type="checkbox" value="">
+                <label id="check-rules-label" style="padding-right:10px;" class="form-check-label" for="check-rules">
                   قوانین و شرایط را می‌پذیرم
                 </label>
             </div>              
-            <button id="submit-button" type="button" class="btn btn-primary btn-sm btn-block" onclick="checkFormRegister()">ثبت نام</button>
+            <button id="submit-button" style="width:300px; margin-right:10px;"type="button" class="btn btn-primary btn-sm btn-block" onclick="checkFormRegister()">ثبت نام</button>
         </div>
     </form>`
     var element = document.getElementById("registerTab")
@@ -31,14 +31,14 @@ fillFormLogin = function () {
     var alert = document.getElementById("alertContainer")
     alert.innerHTML = ``
     document.getElementById("logRegForm").innerHTML = `<form>
-        <div class = "form-group align-items-center mx-sm-3">
+        <div class = "form-group">
             <div class="form-group" style="margin-top:55px;">
-                <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ایمیل" oninput="changeDir(this)">
+                <input type="text" style="width:300px; margin-right:10px;" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ایمیل" oninput="changeDir(this)">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور" oninput="changeDir(this)">
+                <input type="password" style="width:300px; margin-right:10px;" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور" oninput="changeDir(this)">
             </div>
-            <button id="submit-button" type="button" class="btn btn-primary btn-sm btn-block" onclick="checkFormLogin()">ورود</button>
+            <button id="submit-button" type="button" style="width:300px; margin-right:10px;" class="btn btn-primary btn-sm btn-block" onclick="checkFormLogin()">ورود</button>
         </div>
     </form>`
     var element = document.getElementById("registerTab")
@@ -50,7 +50,7 @@ fillFormLogin = function () {
 showAlert = function (str, type) {
     var element = document.getElementById("alertContainer")
     element.innerHTML = `
-    <div id = "alertBox1" class="alert alert-${type} alert-dismissible fade show fade-in  align-item-center form-group mx-sm-3" role="alert">
+    <div id = "alertBox1" style="width:300px; margin-right:10px;" class="alert alert-${type} alert-dismissible fade show fade-in  align-item-center form-group" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="closeAlert()">
             <span aria-hidden="true">&times;</span>
         </button>
