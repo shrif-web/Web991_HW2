@@ -210,7 +210,6 @@ body.dark-mode #image-red {
 }
 
 
-
 @media (max-width:600px) {
     /* your conditional / responsive CSS inside this condition */
     #img-container,#image-blue, #image-red,#note {

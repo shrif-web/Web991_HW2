@@ -111,7 +111,16 @@ checkFormLogin = function () {
 
 setup = function () {
     fillFormLogin();
-    loadStartingAnimation();
+    // loadStartingAnimation();
+    window.addEventListener("resize", ()=>{
+        if(screen.width<576){
+            document.getElementById("return-home").classList.remove("navbar-collapse")
+    
+        }
+        else{
+            document.getElementById("return-home").classList.add("navbar-collapse")
+        }
+    })
 }
 
 loadStartingAnimation = function () {
@@ -192,3 +201,4 @@ changeDir = function (elem) {
 toggleDark = function () {
     document.getElementById("main-body").classList.toggle("dark-mode")
 }
+
