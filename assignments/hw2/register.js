@@ -112,8 +112,8 @@ checkFormLogin = function () {
 setup = function () {
     fillFormLogin();
     loadStartingAnimation();
-    setCollapse()
-    window.addEventListener("resize", setCollapse)
+    // setCollapse()
+    // window.addEventListener("resize", setCollapse)
 }
 
 setCollapse = function() {
