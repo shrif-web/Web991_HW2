@@ -15,7 +15,7 @@
 </head>
 
 <body dir="rtl" onload="setup()">
-    <nav class="navbar navbar-expand shadow">
+    <nav class="navbar navbar-expand shadow" id="top-navbar">
         <a class="navbar-brand" href="#">
             <img id="logo" src="./assets/blue_logo.png" height="60px" alt="" />
         </a>
@@ -28,17 +28,18 @@
                     <a class="nav-link" href="#" id="dataPage">داده‌ها</a>
                 </li>
             </ul>
-        </div>  
+        </div>
 
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="login-div">
-            <button class="btn btn-primary" id="signupButton" style="margin-right: 10px; margin-left: 20px">
+            <button class="btn btn-primary" id="signupButton" onclick="goToRegister()"
+                style="margin-right: 10px; margin-left: 20px">
                 ثبت نام
             </button>
             <button class="btn btn-outline-primary" id="loginButton">ورود</button>
         </div>
         <div class="container-fluid" id="toggle-div" style="display: none">
-            <svg id="show-sidebar" height="25pt" viewBox="0 -53 384 384" width="25pt" xmlns="http://www.w3.org/2000/svg "
-                onclick="showSidebar()">
+            <svg id="show-sidebar" height="25pt" viewBox="0 -53 384 384" width="25pt"
+                xmlns="http://www.w3.org/2000/svg " onclick="showSidebar()">
                 <path
                     d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
                 <path
@@ -108,7 +109,8 @@
             </div>
         </div>
     </div>
-    <nav id="bottom-navbar" class="navbar navbar-expand fixed-bottom shadow justify-content-center align-items-start" style="z-index: 0; width: 100%;">
+    <nav id="bottom-navbar" class="navbar navbar-expand fixed-bottom shadow justify-content-center align-items-start"
+        style="z-index: 0; width: 100%;">
         <div class="" id="navbarCollapse">
             <ul class="navbar-nav justify-content-center" style="text-align: center; margin-left: 5%;">
                 <li id="homepage_s" class="nav-item active" onclick="homepage()">
