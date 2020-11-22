@@ -112,18 +112,6 @@ checkFormLogin = function () {
 setup = function () {
     fillFormLogin();
     loadStartingAnimation();
-    // setCollapse()
-    // window.addEventListener("resize", setCollapse)
-}
-
-setCollapse = function() {
-    if(screen.width<576){
-        document.getElementById("return-home").classList.remove("navbar-collapse")
-
-    }
-    else{
-        document.getElementById("return-home").classList.add("navbar-collapse")
-    }
 }
 
 loadStartingAnimation = function () {

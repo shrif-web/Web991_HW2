@@ -244,23 +244,36 @@ body.dark-mode > div > div > div > div > .table-striped > thead {
 }
 
 /* responsive design */
-#toggle-div >svg{
+#toggle-div > svg {
+  transition: 0s !important;
+  
+}
+#toggle-div > svg:hover{
+  cursor: pointer;
+}
+#toggle-div > svg > g {
   transition: 0s !important;
 }
-#toggle-div >svg > g{
+#toggle-div > svg > g > g {
   transition: 0s !important;
 }
-#toggle-div >svg > g>g{
-  transition: 0s !important;
+#toggle-div > svg {
+  fill: #186aa5;
 }
-#toggle-div > svg{
-    fill:#186aa5;
+body.dark-mode #toggle-div > svg {
+  fill: #a20101;
 }
-body.dark-mode #toggle-div > svg{
-    fill:#a20101;
-}
-#bottom-navbar{
+#bottom-navbar {
   display: none;
+}
+#bottom-navbar > div > ul > li {
+  width: 25%;
+}
+#bottom-navbar > div > ul > li:hover{
+  background-color: rgb(153, 182, 245);
+}
+body.dark-mode #bottom-navbar > div > ul > li:hover{
+  background-color: #bd4040;
 }
 @media (max-width: 600px) {
   #sidebar.active {
@@ -280,10 +293,10 @@ body.dark-mode #toggle-div > svg{
   .mainPanel {
     margin-right: 0px;
   }
-  #home-data{
-      display: none;
+  #home-data {
+    display: none;
   }
-  #bottom-navbar{
+  #bottom-navbar {
     display: block;
   }
 }
