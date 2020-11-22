@@ -259,13 +259,15 @@ body.dark-mode > div > div > div > div > .table-striped > thead {
 body.dark-mode #toggle-div > svg{
     fill:#a20101;
 }
+#bottom-navbar{
+  display: none;
+}
 @media (max-width: 600px) {
   #sidebar.active {
     opacity: 0;
     margin-left: -300px;
   }
   #sidebar {
-    /* todo move left */
     left: 0;
     right: auto;
   }
@@ -280,5 +282,8 @@ body.dark-mode #toggle-div > svg{
   }
   #home-data{
       display: none;
+  }
+  #bottom-navbar{
+    display: block;
   }
 }
