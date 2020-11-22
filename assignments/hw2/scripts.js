@@ -157,3 +157,47 @@ hideSidebar = function () {
   show_button.style.display = "";
   hide_button.style.display = "none";
 };
+
+homepage = function(){
+  let homepage_s = document.getElementById("homepage_s")
+  let login_s = document.getElementById("login_s")
+  let register_s = document.getElementById("register_s")
+  let data_s = document.getElementById("datapage_s")
+  homepage_s.classList.add("active")
+  login_s.classList.remove("active")
+  register_s.classList.remove("active")
+  data_s.classList.remove("active")
+}
+
+data = function(){
+  let homepage_s = document.getElementById("homepage_s")
+  let login_s = document.getElementById("login_s")
+  let register_s = document.getElementById("register_s")
+  let data_s = document.getElementById("datapage_s")
+  data_s.classList.add("active")
+  login_s.classList.remove("active")
+  register_s.classList.remove("active")
+  homepage_s.classList.remove("active")
+}
+
+login = function(){
+  let homepage_s = document.getElementById("homepage_s")
+  let login_s = document.getElementById("login_s")
+  let register_s = document.getElementById("register_s")
+  let data_s = document.getElementById("datapage_s")
+  login_s.classList.add("active")
+  homepage_s.classList.remove("active")
+  register_s.classList.remove("active")
+  data_s.classList.remove("active")
+}
+
+register = function(){
+  let homepage_s = document.getElementById("homepage_s")
+  let login_s = document.getElementById("login_s")
+  let register_s = document.getElementById("register_s")
+  let data_s = document.getElementById("datapage_s")
+  register_s.classList.add("active")
+  login_s.classList.remove("active")
+  homepage_s.classList.remove("active")
+  data_s.classList.remove("active")
+}
