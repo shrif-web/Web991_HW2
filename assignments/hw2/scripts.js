@@ -140,7 +140,20 @@ function getTableData() {
   ];
 }
 
-toggleSidebar = function () {
+showSidebar = function () {
   let element = document.getElementById("sidebar");
   element.classList.toggle("active");
+  let show_button = document.getElementById("show-sidebar")
+  let hide_button = document.getElementById("hide-sidebar")
+  show_button.style.display="none"
+  hide_button.style.display=""
 };
+
+hideSidebar = function(){
+  let element = document.getElementById("sidebar");
+  element.classList.toggle("active");
+  let show_button = document.getElementById("show-sidebar")
+  let hide_button = document.getElementById("hide-sidebar")
+  show_button.style.display=""
+  hide_button.style.display="none"
+}

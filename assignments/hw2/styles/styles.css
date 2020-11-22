@@ -244,9 +244,17 @@ body.dark-mode > div > div > div > div > .table-striped > thead {
 }
 
 /* responsive design */
+#toggle-div >svg{
+  transition: 0s !important;
+}
+#toggle-div >svg > g{
+  transition: 0s !important;
+}
+#toggle-div >svg > g>g{
+  transition: 0s !important;
+}
 #toggle-div > svg{
     fill:#186aa5;
-    transition: 0s !important;
 }
 body.dark-mode #toggle-div > svg{
     fill:#a20101;
