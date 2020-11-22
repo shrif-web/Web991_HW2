@@ -29,14 +29,21 @@
             </ul>
         </div>
 
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="login-div">
             <button class="btn btn-primary" id="signupButton" style="margin-right: 10px; margin-left: 20px;">ثبت
                 نام
             </button>
             <button class="btn btn-outline-primary" id="loginButton">ورود</button>
         </div>
+        <div class="container-fluid" id="toggle-div" style="display: none;">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info" onclick="toggleSidebar()">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+        </div>
     </nav>
-    <div class="sidebar">
+     <div class="sidebar" id="sidebar">
         <p><b>اعضای تیم</b></p>
         <ul>
             <li>علیرضا</li>
@@ -45,7 +52,6 @@
         </ul>
         <br>
         <p><b>تنظیمات</b></p>
-
         <span class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="customSwitches" style="position: inherit;">
             <label class="custom-control-label" for="customSwitches" style="padding-left: 50px;">حالت شب</label>

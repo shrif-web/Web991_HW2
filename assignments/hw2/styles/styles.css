@@ -226,3 +226,22 @@ body.dark-mode>div>div>div>div>.table-striped>thead {
 .custom-control-input:focus~.custom-control-label::before {
     box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.2) !important;
 }
+
+/* responsive design */
+
+
+@media (max-width:600px){
+    #sidebar.active{
+        opacity: 0;
+        margin-right: -300px;
+    }    
+    #sidebar{
+        /* todo move left */
+    }
+    #toggle-div{
+        display: block !important;
+    }
+    #login-div {
+        display: none !important;
+    }
+}

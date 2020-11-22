@@ -124,3 +124,8 @@ function getTableData() {
     }
   ];
 }
+
+toggleSidebar=function(){
+  let element = document.getElementById("sidebar")
+  element.classList.toggle("active")
+}
