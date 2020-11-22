@@ -50,6 +50,11 @@ nav>div>.btn-outline-primary {
     border-color: #186AA5;
 }
 
+#panelButtons>.btn-outline-primary:hover {
+    background-color: #186AA5;
+    color: white;
+}
+
 #panelButtons>button {
     width: 90px;
     border-width: 3px !important;
@@ -78,11 +83,36 @@ nav>div>.btn-outline-primary {
     margin-right: 300px;
 }
 
+.container {
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+}
+
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
+}
+
+@media (min-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background-color: #e8eff7 !important;
+}
+
+body.dark-mode>div>div>div>div>.card {
+    background-color: #f7e8e8 !important;
 }
 
 .card:hover {
@@ -92,6 +122,9 @@ nav>div>.btn-outline-primary {
 
 .tableDiv {
     text-align: center;
+    transition: opacity 0.2s linear;
+    width: 130vh;
+    min-width: 70vh;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td,
@@ -123,7 +156,6 @@ nav>div>.btn-outline-primary {
 }
 
 .scrollbar {
-    margin-left: 30px;
     float: left;
     height: 600px;
     overflow-y: scroll;
