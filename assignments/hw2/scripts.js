@@ -190,6 +190,7 @@ login = function () {
     homepage_s.classList.remove("active")
     register_s.classList.remove("active")
     data_s.classList.remove("active")
+    goToLogin()
 }
 
 register = function () {
@@ -201,6 +202,7 @@ register = function () {
     login_s.classList.remove("active")
     homepage_s.classList.remove("active")
     data_s.classList.remove("active")
+    goToRegister()
 }
 
 loadStartingAnimation = function () {
@@ -244,4 +246,12 @@ goToRegister = function () {
     setTimeout(() => {
         window.location.href = "./register.html"
     }, duration + 300);
+}
+
+goToLogin = function () {
+    let duration = 1500
+    loadEndingAnimation(duration)
+    setTimeout(() => {
+        window.location.href = "./register.html"
+    }, duration + 300)
 }

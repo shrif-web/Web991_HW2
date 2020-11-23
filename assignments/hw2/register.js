@@ -115,6 +115,7 @@ setup = function () {
 }
 
 loadStartingAnimation = function () {
+    let body = document.getElementById('main-body');
     let navbar = document.getElementById('top-navbar');
     let imageLight = document.getElementById('image-light');
     let imageDark = document.getElementById('image-dark');
@@ -159,10 +160,10 @@ loadStartingAnimation = function () {
 }
 
 loadEndingAnimation = function (duration) {
+    let body = document.getElementById('main-body');
     let navbar = document.getElementById('top-navbar');
     let imageLight = document.getElementById('image-light');
     let imageDark = document.getElementById('image-dark')
-    let image = document.getElementById('image');
     let logregdiv = document.getElementById('logregdiv');
     let start = Date.now();
     let timer = setInterval(frame, 20);
@@ -172,6 +173,7 @@ loadEndingAnimation = function (duration) {
         if (passedTime >= duration) {
             clearInterval(timer);
         } else {
+            body.style.opacity = 1 - passedTime / duration
             navbar.style.opacity = 1 - passedTime / duration
             imageLight.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
             imageLight.style.opacity = 1 - passedTime / duration
