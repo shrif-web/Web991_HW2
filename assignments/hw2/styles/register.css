@@ -189,26 +189,30 @@ body.dark-mode #submit-button {
     transition: 0.3s;
 }
 
-#image-blue {
+#image-light {
+    height: 360px;
+    width: 100%;
     visibility: hidden;
     left: 300px;
     position: relative;
     display: block;
 }
 
-body.dark-mode #image-blue {
+body.dark-mode #image-light {
     display: none;
 }
 
-body.dark-mode #image-red {
-    display: block;
-}
-
-#image-red {
+#image-dark {
+    height: 360px;
+    width: 100%;
     visibility: hidden;
     left: 300px;
     position: relative;
     display: none;
+}
+
+body.dark-mode #image-dark {
+    display: block;
 }
 
 #return-home-text, #return-home-icon {

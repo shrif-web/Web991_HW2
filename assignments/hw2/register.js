@@ -116,8 +116,8 @@ setup = function () {
 
 loadStartingAnimation = function () {
     let navbar = document.getElementById('top-navbar');
-    let imageBlue = document.getElementById('image-blue');
-    let imageRed = document.getElementById('image-red');
+    let imageLight = document.getElementById('image-light');
+    let imageDark = document.getElementById('image-dark');
     let logregdiv = document.getElementById('logregdiv');
     navbar.style.opacity = 0
 
@@ -131,33 +131,26 @@ loadStartingAnimation = function () {
             clearInterval(timer_navbar);
         } else {
             navbar.style.opacity = passedTime / duration;
-            // imageBlue.style.left = -duration / 5 + passedTime / 5 + 'px';
-            // imageBlue.style.opacity = passedTime / duration;
-            // imageRed.style.left = -duration / 5 + passedTime / 5 + 'px';
-            // imageRed.style.opacity = passedTime / duration;
-            // logregdiv.style.opacity = passedTime / duration;
-            // logregdiv.style.right = -duration / 5 + passedTime / 5 + 'px';
         }
     }
 
     setTimeout(() => {
         start2 = Date.now()
         logregdiv.style.visibility = 'visible'
-        imageBlue.style.visibility = 'visible'
-        imageRed.style.visibility = 'visible'
+        imageLight.style.visibility = 'visible'
+        imageDark.style.visibility = 'visible'
         let timer_mid = setInterval(frame_mid, 20);
 
         function frame_mid() {
             let duration = 1500;
             let passedTime = Date.now() - start2;
             if (passedTime >= duration) {
-                clearInterval(timer_navbar);
+                clearInterval(timer_mid);
             } else {
-                // navbar.style.opacity = passedTime / duration;
-                imageBlue.style.left = -duration / 5 + passedTime / 5 + 'px';
-                imageBlue.style.opacity = passedTime / duration;
-                imageRed.style.left = -duration / 5 + passedTime / 5 + 'px';
-                imageRed.style.opacity = passedTime / duration;
+                imageLight.style.left = -duration / 5 + passedTime / 5 + 'px';
+                imageLight.style.opacity = passedTime / duration;
+                imageDark.style.left = -duration / 5 + passedTime / 5 + 'px';
+                imageDark.style.opacity = passedTime / duration;
                 logregdiv.style.opacity = passedTime / duration;
                 logregdiv.style.right = -duration / 5 + passedTime / 5 + 'px';
             }
@@ -167,8 +160,9 @@ loadStartingAnimation = function () {
 
 loadEndingAnimation = function (duration) {
     let navbar = document.getElementById('top-navbar');
-    let imageBlue = document.getElementById('image-blue');
-    let imageRed = document.getElementById('image-red')
+    let imageLight = document.getElementById('image-light');
+    let imageDark = document.getElementById('image-dark')
+    let image = document.getElementById('image');
     let logregdiv = document.getElementById('logregdiv');
     let start = Date.now();
     let timer = setInterval(frame, 20);
@@ -179,10 +173,10 @@ loadEndingAnimation = function (duration) {
             clearInterval(timer);
         } else {
             navbar.style.opacity = 1 - passedTime / duration
-            imageBlue.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
-            imageBlue.style.opacity = 1 - passedTime / duration
-            imageRed.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
-            imageRed.style.opacity = 1 - passedTime / duration
+            imageLight.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
+            imageLight.style.opacity = 1 - passedTime / duration
+            imageDark.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
+            imageDark.style.opacity = 1 - passedTime / duration
             logregdiv.style.right = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
             logregdiv.style.opacity = 1 - passedTime / duration
         }
