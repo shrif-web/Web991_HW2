@@ -141,6 +141,18 @@ body.dark-mode>div>div>div>div>.card {
   background-color: #f7e8e8 !important;
 }
 
+body.dark-mode>div>div>div>div>table {
+  background-color: #f7e8e8 !important;
+  color: #a20101;
+  transition: 0.3s !important;
+}
+
+.cards>table {
+  background-color: #e8eff7;
+  color: #186aa5;
+  transition: 0.3s !important;
+}
+
 .card:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: 0.5s;

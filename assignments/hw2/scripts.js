@@ -60,6 +60,7 @@ fillGrid = function () {
 </span>`;
   }
   document.getElementById("dataTable").innerHTML = "";
+  document.getElementById("smallDataTable").innerHTML = "";
   document.getElementById("dataGrid").innerHTML = template;
   document.getElementById("panelButtons").style.display = "flex";
 };
@@ -105,8 +106,7 @@ loadSmallTable = (data) => {
   template = ``;
   for (let i = 0; i < data.length; i++) {
     template += `
-    <table class="smallTable" aria-labelledby="tableLabel"
-                        style="background-color: #e8eff7;width: 100%; color: #186aa5">
+    <table class="smallTable" aria-labelledby="tableLabel" style="width: 100%;">
     <tbody>
       <tr>
           <td><b>رتبه</b></td>
@@ -114,7 +114,7 @@ loadSmallTable = (data) => {
       </tr>
       <tr>
           <td><b>نام تیم</b></td>
-          <td>${data[i].name}</td>
+          <td style="color: purple"><b>${data[i].name}</b></td>
       </tr>
       <tr>
           <td><b>نام دانشگاه و کشور</b></td>
@@ -122,7 +122,7 @@ loadSmallTable = (data) => {
       </tr>
       <tr>
           <td><b>امتیاز</b></td>
-          <td>${data[i].score}</td>
+          <td style="color: purple"><b>${data[i].score}</b></td>
       </tr>
       </tbody>
   </table>`;
@@ -200,6 +200,8 @@ loadStartingAnimation = function () {
   let topNavbar = document.getElementById('top-navbar')
   let start = Date.now()
   let timer = setInterval(frame, 20);
+  let bottom_navbar = document.getElementById("bottom-navbar")
+  let mainPanel = document.getElementById("mainPanel")
 
   function frame() {
     let passedTime = Date.now() - start;
@@ -207,7 +209,9 @@ loadStartingAnimation = function () {
       clearInterval(timer);
     } else {
       sidebar.style.opacity = passedTime / duration
+      bottom_navbar.style.opacity = passedTime / duration
       topNavbar.style.opacity = passedTime / duration
+      mainPanel.style.opacity = passedTime / duration
     }
   }
 }
@@ -217,6 +221,8 @@ loadEndingAnimation = function (duration) {
   let topNavbar = document.getElementById('top-navbar')
   let start = Date.now()
   let timer = setInterval(frame, 20);
+  let bottom_navbar = document.getElementById("bottom-navbar")
+  let mainPanel = document.getElementById("mainPanel")
 
   function frame() {
     let passedTime = Date.now() - start;
@@ -224,7 +230,9 @@ loadEndingAnimation = function (duration) {
       clearInterval(timer);
     } else {
       sidebar.style.opacity = 1 - passedTime / duration
+      bottom_navbar.style.opacity = 1 - passedTime / duration
       topNavbar.style.opacity = 1 - passedTime / duration
+      mainPanel.style.opacity = 1 - passedTime / duration
     }
   }
 }
