@@ -133,7 +133,7 @@ body.dark-mode #registerTab {
 }
 
 #registerTab.active {
-    background-color: rgb(32, 68, 145);
+    background-color: #186aa5;
     color: white;
 }
 
@@ -154,7 +154,7 @@ body.dark-mode #loginTab {
 }
 
 #loginTab.active {
-    background-color: rgb(32, 68, 145);
+    background-color:#186aa5;
     color: white;
 }
 
@@ -176,8 +176,8 @@ body.dark-mode #check-rules-label {
 }
 
 #submit-button {
-    background-color: rgb(32, 68, 145);
-    border-color: rgb(32, 68, 145);
+    background-color: #186aa5;
+    border-color: #186aa5;
 }
 
 body.dark-mode #submit-button {
@@ -224,6 +224,9 @@ body.dark-mode #image-dark {
     #img-container, #image-blue, #image-red, #note {
         display: none !important;
         visibility: hidden !important;
+    }
+    #div1{
+        padding-top: 10%;
     }
 }
 
