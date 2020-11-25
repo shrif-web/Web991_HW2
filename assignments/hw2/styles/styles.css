@@ -312,14 +312,6 @@ body.dark-mode #bottom-navbar>div>ul>li {
   border-bottom: thick solid;
 }
 
-#bottom-navbar>div>ul>li:hover {
-  background-color: rgb(153, 182, 245);
-}
-
-body.dark-mode #bottom-navbar>div>ul>li:hover {
-  background-color: #bd4040;
-}
-
 @media (max-width: 600px) {
   #sidebar.active {
     opacity: 0;
