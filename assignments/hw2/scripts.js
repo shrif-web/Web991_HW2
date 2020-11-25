@@ -199,14 +199,18 @@ loadStartingAnimation = function () {
   let topNavbar = document.getElementById('top-navbar')
   let start = Date.now()
   let timer = setInterval(frame, 20);
+  let bottom_navbar = document.getElementById("bottom-navbar")
+  let mainPanel = document.getElementById("mainPanel")
 
   function frame() {
     let passedTime = Date.now() - start;
     if (passedTime >= duration) {
       clearInterval(timer);
     } else {
-      // sidebar.style.right = (-duration / 3 + passedTime / 3) + 'px'
+      sidebar.style.opacity = passedTime / duration
+      bottom_navbar.style.opacity = passedTime / duration
       topNavbar.style.opacity = passedTime / duration
+      mainPanel.style.opacity = passedTime / duration
     }
   }
 }
@@ -216,14 +220,18 @@ loadEndingAnimation = function (duration) {
   let topNavbar = document.getElementById('top-navbar')
   let start = Date.now()
   let timer = setInterval(frame, 20);
+  let bottom_navbar = document.getElementById("bottom-navbar")
+  let mainPanel = document.getElementById("mainPanel")
 
   function frame() {
     let passedTime = Date.now() - start;
     if (passedTime >= duration) {
       clearInterval(timer);
     } else {
-      // sidebar.style.right = -passedTime / 4 + 'px'
+      sidebar.style.opacity = 1 - passedTime / duration
+      bottom_navbar.style.opacity = 1 - passedTime / duration
       topNavbar.style.opacity = 1 - passedTime / duration
+      mainPanel.style.opacity = 1 - passedTime / duration
     }
   }
 }
