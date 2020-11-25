@@ -206,7 +206,7 @@ loadStartingAnimation = function () {
     if (passedTime >= duration) {
       clearInterval(timer);
     } else {
-      // sidebar.style.right = (-duration / 3 + passedTime / 3) + 'px'
+      sidebar.style.opacity = passedTime / duration
       topNavbar.style.opacity = passedTime / duration
     }
   }
@@ -223,7 +223,7 @@ loadEndingAnimation = function (duration) {
     if (passedTime >= duration) {
       clearInterval(timer);
     } else {
-      // sidebar.style.right = -passedTime / 4 + 'px'
+      sidebar.style.opacity = 1 - passedTime / duration
       topNavbar.style.opacity = 1 - passedTime / duration
     }
   }
