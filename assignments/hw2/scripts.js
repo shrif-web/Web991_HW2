@@ -69,6 +69,13 @@ loadTable = () => {
   navigationMenuToggle("datapage_s")
   //
   let data = getTableData();
+  loadMainTable(data);
+  loadSmallTable(data);
+  document.getElementById("dataGrid").innerHTML = "";
+  document.getElementById("panelButtons").style.display = "flex";
+};
+
+loadMainTable = (data) => {
   let template = `<table class='table table-striped' aria-labelledby="tableLabel">
   <thead>
     <tr>
@@ -90,10 +97,37 @@ loadTable = () => {
   template += `</tbody>
 </table>
 `;
-  document.getElementById("dataGrid").innerHTML = "";
   document.getElementById("dataTable").innerHTML = template;
-  document.getElementById("panelButtons").style.display = "flex";
 };
+
+loadSmallTable = (data) => {
+  template = ``;
+  for (let i = 0; i < data.length; i++) {
+    template += `
+    <table class="smallTable" aria-labelledby="tableLabel"
+                        style="background-color: #e8eff7;width: 100%; color: #186aa5">
+    <tbody>
+      <tr>
+          <td><b>رتبه</b></td>
+          <td>${data[i].ranking}</td>
+      </tr>
+      <tr>
+          <td><b>نام تیم</b></td>
+          <td>${data[i].name}</td>
+      </tr>
+      <tr>
+          <td><b>نام دانشگاه و کشور</b></td>
+          <td>${data[i].from}</td>
+      </tr>
+      <tr>
+          <td><b>امتیاز</b></td>
+          <td>${data[i].score}</td>
+      </tr>
+      </tbody>
+  </table>`;
+  }
+  document.getElementById("smallDataTable").innerHTML = template;
+}
 
 function getTableData() {
   return [{

@@ -113,6 +113,26 @@ nav>div>.btn-outline-primary {
   }
 }
 
+@media (min-width: 600px) {
+  #dataTable {
+    display: "";
+  }
+
+  #smallDataTable {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #dataTable {
+    display: none;
+  }
+
+  #smallDataTable {
+    display: "";
+  }
+}
+
 .card {
   background-color: #e8eff7 !important;
 }
@@ -152,6 +172,21 @@ body.dark-mode>div>div>div>div>.card {
 .table-striped>thead>tr>th {
   border: 1px solid #d1e4f3;
 }
+
+/* <600 table: */
+.smallTable>tbody>tr>td {
+  padding: 10px;
+}
+
+.smallTable>tbody>tr>td:nth-child(even) {
+  text-align: left;
+}
+
+.smallTable>tbody>tr>td:nth-child(odd) {
+  text-align: right;
+}
+
+/*  */
 
 #panelButtons {
   display: none;
