@@ -38,8 +38,9 @@
             <button class="btn btn-outline-primary" id="loginButton" onclick="goToLogin()">ورود</button>
         </div>
         <div class="container-fluid" id="toggle-div" style="display: none">
-            <svg id="show-sidebar" height="25pt" viewBox="0 -53 384 384" width="25pt"
-                xmlns="http://www.w3.org/2000/svg " onclick="showSidebar()">
+
+            <svg id="show-sidebar" height="25pt" viewBox="0 -53 384 384" width="25pt" style="margin-left: 20px;"
+                xmlns="http://www.w3.org/2000/svg" onclick="showSidebar()">
                 <path
                     d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
                 <path
@@ -49,8 +50,8 @@
             </svg>
             <svg id="hide-sidebar" onclick="hideSidebar()" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 409.806 409.806"
-                style="enable-background:new 0 0 409.806 409.806;display: none;" width="25pt" height="25pt"
-                xml:space="preserve">
+                style="enable-background:new 0 0 409.806 409.806;display: none; margin-left: 20px;" width="25pt"
+                height="25pt" xml:space="preserve">
                 <g>
                     <g>
                         <path d="M228.929,205.01L404.596,29.343c6.78-6.548,6.968-17.352,0.42-24.132c-6.548-6.78-17.352-6.968-24.132-0.42
@@ -93,11 +94,12 @@
             <label class="custom-control-label" for="customSwitches" style="padding-left: 50px">حالت شب</label>
         </span>
     </div>
-    <div class="mainPanel">
+    <div class="mainPanel" style="padding: 30px;">
         <div class="container" dir="ltr">
             <div class="scrollbar scrollbar-primary">
                 <div class="cards" id="dataGrid"></div>
                 <div class="tableDiv" id="dataTable" dir="rtl"></div>
+                <div class="cards" id="smallDataTable" dir="rtl"></div>
                 <div id="panelButtons">
                     <button id="prevButton" class="btn btn-outline-primary">
                         قبلی
@@ -110,7 +112,8 @@
         </div>
     </div>
     <nav id="bottom-navbar" class="navbar navbar-expand fixed-bottom shadow justify-content-center align-items-start"
-        style="z-index: 0; width: 100%;">
+        style="z-index: 2; width: 100%;">
+
         <div class="" id="navbarCollapse">
             <ul class="navbar-nav justify-content-center" style="text-align: center; margin-left: 5%;">
                 <li id="homepage_s" class="nav-item active" onclick="homepage()">
