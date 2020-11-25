@@ -105,8 +105,7 @@ loadSmallTable = (data) => {
   template = ``;
   for (let i = 0; i < data.length; i++) {
     template += `
-    <table class="smallTable" aria-labelledby="tableLabel"
-                        style="background-color: #e8eff7;width: 100%; color: #186aa5">
+    <table class="smallTable" aria-labelledby="tableLabel" style="width: 100%;">
     <tbody>
       <tr>
           <td><b>رتبه</b></td>
