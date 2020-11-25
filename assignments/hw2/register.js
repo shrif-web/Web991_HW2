@@ -111,7 +111,36 @@ checkFormLogin = function () {
 
 setup = function () {
     fillFormLogin();
+    loadTextColorAnimation();
     loadStartingAnimation();
+}
+
+loadTextColorAnimation = function () {
+    let imgLightText = document.getElementById('img-text-light');
+    let imgDarkText = document.getElementById('img-text-dark');
+
+    let timer = setInterval(frame, 1000);
+
+    function frame() {
+        if (imgLightText.style.color == 'yellow') {
+            imgLightText.style.color = 'red';
+        }
+        else if (imgLightText.style.color == 'red') {
+            imgLightText.style.color = 'blue';
+        }
+        else {
+            imgLightText.style.color = 'yellow';
+        }
+        if (imgDarkText.style.color == 'white') {
+            imgDarkText.style.color = 'orange';
+        }
+        else if (imgDarkText.style.color == 'orange') {
+            imgDarkText.style.color = 'cyan';
+        }
+        else {
+            imgDarkText.style.color = 'white';
+        }
+    }
 }
 
 loadStartingAnimation = function () {
@@ -119,6 +148,8 @@ loadStartingAnimation = function () {
     let navbar = document.getElementById('top-navbar');
     let imageLight = document.getElementById('image-light');
     let imageDark = document.getElementById('image-dark');
+    let imgLightText = document.getElementById('img-text-light');
+    let imgDarkText = document.getElementById('img-text-dark');
     let logregdiv = document.getElementById('logregdiv');
     navbar.style.opacity = 0
 
@@ -156,6 +187,22 @@ loadStartingAnimation = function () {
                 logregdiv.style.right = -duration / 5 + passedTime / 5 + 'px';
             }
         }
+
+        setTimeout(() => {
+            start3 = Date.now()
+            let timer_img_text = setInterval(frame_img_text, 20);
+
+            function frame_img_text() {
+                let duration = 1500;
+                let passedTime = Date.now() - start3;
+                if (passedTime >= duration) {
+                    clearInterval(timer_img_text);
+                } else {
+                    imgLightText.style.opacity = passedTime / duration;
+                    imgDarkText.style.opacity = passedTime / duration;
+                }
+            }
+        }, 1700);
     }, 1200);
 }
 
@@ -163,7 +210,9 @@ loadEndingAnimation = function (duration) {
     let body = document.getElementById('main-body');
     let navbar = document.getElementById('top-navbar');
     let imageLight = document.getElementById('image-light');
-    let imageDark = document.getElementById('image-dark')
+    let imageDark = document.getElementById('image-dark');
+    let imgLightText = document.getElementById('img-text-light');
+    let imgDarkText = document.getElementById('img-text-dark');
     let logregdiv = document.getElementById('logregdiv');
     let start = Date.now();
     let timer = setInterval(frame, 20);
@@ -180,6 +229,8 @@ loadEndingAnimation = function (duration) {
             imageDark.style.left = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
             imageDark.style.opacity = 1 - passedTime / duration
             logregdiv.style.right = (-duration / 5) - (-duration / 5 + passedTime / 5) + 'px'
+            imgLightText.style.opacity = 1 - passedTime / duration
+            imgDarkText.style.opacity = 1 - passedTime / duration
             logregdiv.style.opacity = 1 - passedTime / duration
         }
     }
