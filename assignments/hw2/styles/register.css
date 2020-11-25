@@ -85,6 +85,7 @@ body.dark-mode>nav {
 }
 
 #logregdiv {
+    visibility: hidden;
     position: relative;
     float: left;
     width: 40%;
@@ -161,10 +162,12 @@ body.dark-mode #loginTab.active {
     background-color: #bd4040;
     color: white;
 }
+
 #check-rules:hover {
     cursor: pointer;
 }
-body.dark-mode #check-rules{
+
+body.dark-mode #check-rules {
     color: red !important;
 }
 
@@ -186,35 +189,48 @@ body.dark-mode #submit-button {
     transition: 0.3s;
 }
 
-#image-blue {
+#image-light {
+    height: 360px;
+    width: 100%;
+    visibility: hidden;
+    left: 300px;
     position: relative;
     display: block;
 }
 
-body.dark-mode #image-blue {
+body.dark-mode #image-light {
     display: none;
 }
 
-body.dark-mode #image-red {
-    display: block;
-}
-
-#image-red {
+#image-dark {
+    height: 360px;
+    width: 100%;
+    visibility: hidden;
+    left: 300px;
     position: relative;
     display: none;
 }
 
+body.dark-mode #image-dark {
+    display: block;
+}
 
-#return-home-text, #return-home-icon{
+#return-home-text, #return-home-icon {
     cursor: pointer;
 }
 
-
 @media (max-width:600px) {
     /* your conditional / responsive CSS inside this condition */
-    #img-container,#image-blue, #image-red,#note {
+    #img-container, #image-blue, #image-red, #note {
         display: none !important;
         visibility: hidden !important;
     }
-    
+}
+
+#top-navbar {
+    opacity: 0;
+}
+
+#logregdiv {
+    right: 300px;
 }

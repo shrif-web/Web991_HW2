@@ -1,41 +1,42 @@
 setup = function () {
-  document
-    .getElementById("homePage")
-    .addEventListener("click", () => fillGrid());
-  document
-    .getElementById("dataPage")
-    .addEventListener("click", () => loadTable());
-  document
-    .getElementById("customSwitches")
-    .addEventListener("click", () => toggleDarkMode());
-  document.documentElement.scrollTop = 0;
+    loadStartingAnimation()
+    document
+        .getElementById("homePage")
+        .addEventListener("click", () => fillGrid());
+    document
+        .getElementById("dataPage")
+        .addEventListener("click", () => loadTable());
+    document
+        .getElementById("customSwitches")
+        .addEventListener("click", () => toggleDarkMode());
+    document.documentElement.scrollTop = 0;
 };
 
 function toggleDarkMode() {
-  console.log(document.body.classList);
-  document.body.classList.toggle("dark-mode");
-  console.log(document.body.classList);
-  // logo change to red:
-  let logo = document.getElementById("logo");
-  logo.src = toggleValue(logo.src, "blue", "red");
-  // nav buttons go red
-  let loginButton = document.getElementById("loginButton");
-  let signupButton = document.getElementById("signupButton");
-  loginButton.className = toggleValue(
-    loginButton.className,
-    "danger",
-    "primary"
-  );
-  signupButton.className = toggleValue(
-    signupButton.className,
-    "danger",
-    "primary"
-  );
-  // prev/next buttons in the panel go red
-  let prevButton = document.getElementById("prevButton");
-  let nextButton = document.getElementById("nextButton");
-  prevButton.className = toggleValue(prevButton.className, "danger", "primary");
-  nextButton.className = toggleValue(nextButton.className, "danger", "primary");
+    console.log(document.body.classList);
+    document.body.classList.toggle("dark-mode");
+    console.log(document.body.classList);
+    // logo change to red:
+    let logo = document.getElementById("logo");
+    logo.src = toggleValue(logo.src, "blue", "red");
+    // nav buttons go red
+    let loginButton = document.getElementById("loginButton");
+    let signupButton = document.getElementById("signupButton");
+    loginButton.className = toggleValue(
+        loginButton.className,
+        "danger",
+        "primary"
+    );
+    signupButton.className = toggleValue(
+        signupButton.className,
+        "danger",
+        "primary"
+    );
+    // prev/next buttons in the panel go red
+    let prevButton = document.getElementById("prevButton");
+    let nextButton = document.getElementById("nextButton");
+    prevButton.className = toggleValue(prevButton.className, "danger", "primary");
+    nextButton.className = toggleValue(nextButton.className, "danger", "primary");
 }
 
 toggleValue = (template, value1, value2) => {
@@ -57,10 +58,10 @@ fillGrid = function () {
     <p class="card-text">کارت ${i + 1}</p>
   </div>
 </span>`;
-  }
-  document.getElementById("dataTable").innerHTML = "";
-  document.getElementById("dataGrid").innerHTML = template;
-  document.getElementById("panelButtons").style.display = "flex";
+    }
+    document.getElementById("dataTable").innerHTML = "";
+    document.getElementById("dataGrid").innerHTML = template;
+    document.getElementById("panelButtons").style.display = "flex";
 };
 
 loadTable = () => {
@@ -86,15 +87,15 @@ loadMainTable = (data) => {
     </tr>
   </thead>
   <tbody>`;
-  for (let i = 0; i < data.length; i++) {
-    template += `<tr>
+    for (let i = 0; i < data.length; i++) {
+        template += `<tr>
       <td>${data[i].ranking}</td>
       <td>${data[i].name}</td>
       <td>${data[i].from}</td>
       <td>${data[i].score}</td>
     </tr>`;
-  }
-  template += `</tbody>
+    }
+    template += `</tbody>
 </table>
 `;
   document.getElementById("dataTable").innerHTML = template;
@@ -176,22 +177,73 @@ function getTableData() {
 }
 
 showSidebar = function () {
-  let element = document.getElementById("sidebar");
-  element.classList.toggle("active");
-  let show_button = document.getElementById("show-sidebar");
-  let hide_button = document.getElementById("hide-sidebar");
-  show_button.style.display = "none";
-  hide_button.style.display = "";
+    let element = document.getElementById("sidebar");
+    element.classList.toggle("active");
+    let show_button = document.getElementById("show-sidebar");
+    let hide_button = document.getElementById("hide-sidebar");
+    show_button.style.display = "none";
+    hide_button.style.display = "";
 };
 
 hideSidebar = function () {
-  let element = document.getElementById("sidebar");
-  element.classList.toggle("active");
-  let show_button = document.getElementById("show-sidebar");
-  let hide_button = document.getElementById("hide-sidebar");
-  show_button.style.display = "";
-  hide_button.style.display = "none";
+    let element = document.getElementById("sidebar");
+    element.classList.toggle("active");
+    let show_button = document.getElementById("show-sidebar");
+    let hide_button = document.getElementById("hide-sidebar");
+    show_button.style.display = "";
+    hide_button.style.display = "none";
 };
+
+loadStartingAnimation = function () {
+    let duration = 1500
+    let sidebar = document.getElementById('sidebar')
+    let topNavbar = document.getElementById('top-navbar')
+    let start = Date.now()
+    let timer = setInterval(frame, 20);
+
+    function frame() {
+        let passedTime = Date.now() - start;
+        if (passedTime >= duration) {
+            clearInterval(timer);
+        } else {
+            sidebar.style.right = (-duration / 3 + passedTime / 3) + 'px'
+            topNavbar.style.opacity = passedTime / duration
+        }
+    }
+}
+
+loadEndingAnimation = function (duration) {
+    let sidebar = document.getElementById('sidebar')
+    let topNavbar = document.getElementById('top-navbar')
+    let start = Date.now()
+    let timer = setInterval(frame, 20);
+
+    function frame() {
+        let passedTime = Date.now() - start;
+        if (passedTime >= duration) {
+            clearInterval(timer);
+        } else {
+            sidebar.style.right = -passedTime / 4 + 'px'
+            topNavbar.style.opacity = 1 - passedTime / duration
+        }
+    }
+}
+
+goToRegister = function () {
+    let duration = 1500
+    loadEndingAnimation(duration)
+    setTimeout(() => {
+        window.location.href = "./register.html"
+    }, duration + 300);
+}
+
+goToLogin = function () {
+    let duration = 1500
+    loadEndingAnimation(duration)
+    setTimeout(() => {
+        window.location.href = "./register.html"
+    }, duration + 300)
+}
 
 homepage = function () {
   navigationMenuToggle("homepage_s")
@@ -205,12 +257,12 @@ data = function () {
 
 login = function () {
   navigationMenuToggle("login_s")
-  // TODO
+  goToLogin()
 }
 
 register = function () {
   navigationMenuToggle("register_s")
-  // TODO
+  goToRegister()
 }
 
 navigationMenuToggle = (activeMenu) => {
@@ -226,5 +278,4 @@ navigationMenuToggle = (activeMenu) => {
     } else {
       elm.classList.remove("active")
     }
-  }
 }

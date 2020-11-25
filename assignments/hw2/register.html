@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, inital-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, inital-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <title>تمرین 2 وب</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -32,17 +33,17 @@
             <img id="blue-logo" src="./assets/blue_logo.png" height="60px" alt="" loading="lazy" />
             <img id="red-logo" src="./assets/red_logo.png" height="60px" alt="" loading="lazy" />
         </a>
-
+        <button onclick="toggleDark()">dark mode</button>
         <div id="return-home" class="navbar-collapse d-sm-inline-flex flex-sm-row-reverse">
-            <a id="return-home-text" class="nav-link" onclick="backToHome()">بازگشت به خانه<i id="return-home-icon" class="fa fa-chevron-left"
-                    aria-hidden="true"></i></a>
+            <a id="return-home-text" class="nav-link" onclick="backToHome()">بازگشت به خانه<i id="return-home-icon"
+                    class="fa fa-chevron-left" aria-hidden="true"></i></a>
         </div>
     </nav>
     <div id="div1" style="margin:auto; width :50%; height: 100%; margin-top: 10%; display: table;">
-        <div id="logregdiv" style="width: 320px;">
+        <div id="logregdiv" style="width: 320px;visibility: hidden;">
             <div>
                 <ul id="logreg-list" class="nav nav-tabs nav-fill" style="margin-left: 30px; border:0px;">
-                    <li class="nav-item" style="width: 50%;"> 
+                    <li class="nav-item" style="width: 50%;">
                         <a id="loginTab" class="nav-link active" href="#" onclick="fillFormLogin()">ورود</a>
                     </li>
                     <li class="nav-item" style="width: 50%;">
@@ -54,12 +55,19 @@
             <div id="alertContainer"></div>
         </div>
         <div id="img-container" style="height:360px; display: table-cell;" dir="ltr">
-            <img id="image-blue" style=" width:100%; height: 360px;" src="./assets/register/register-blue.jpg">
-            <img id="image-red" style=" width:100%; height: 360px;" src="./assets/register/register-red.png">
+            <picture>
+                <source media="(min-width:1000px)" srcset="./assets/signup-highQ-light.jpg">
+                <source media="(min-width:600px)" srcset="./assets/signup-lowQ-light.jpg">
+                <img id="image-light" src="./assets/signup-lowQ-light.jpg" alt="light">
+            </picture>
+            <picture>
+                <source media="(min-width:1000px)" srcset="./assets/signup-highQ-dark.jpg">
+                <source media="(min-width:600px)" srcset="./assets/signup-lowQ-dark.jpg">
+                <img id="image-dark" src="./assets/signup-lowQ-dark.jpg" alt="dark">
+            </picture>
         </div>
-        
+
     </div>
-    <button onclick="toggleDark()">dark mode</button>
 </body>
 
 </html>
