@@ -60,6 +60,7 @@ fillGrid = function () {
 </span>`;
   }
   document.getElementById("dataTable").innerHTML = "";
+  document.getElementById("smallDataTable").innerHTML = "";
   document.getElementById("dataGrid").innerHTML = template;
   document.getElementById("panelButtons").style.display = "flex";
 };
