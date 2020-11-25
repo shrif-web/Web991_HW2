@@ -47,6 +47,7 @@ toggleValue = (template, value1, value2) => {
 fillGrid = function () {
   document.getElementById("homePage").style.borderBottom = "thick solid";
   document.getElementById("dataPage").style.borderBottom = "none";
+  navigationMenuToggle("homepage_s")
   //
   let template = "";
   for (let i = 0; i < 20; i++) {
@@ -65,6 +66,7 @@ fillGrid = function () {
 loadTable = () => {
   document.getElementById("dataPage").style.borderBottom = "thick solid";
   document.getElementById("homePage").style.borderBottom = "none";
+  navigationMenuToggle("datapage_s")
   //
   let data = getTableData();
   let template = `<table class='table table-striped' aria-labelledby="tableLabel">
@@ -159,18 +161,22 @@ hideSidebar = function () {
 
 homepage = function () {
   navigationMenuToggle("homepage_s")
+  fillGrid()
 }
 
 data = function () {
   navigationMenuToggle("datapage_s")
+  loadTable()
 }
 
 login = function () {
   navigationMenuToggle("login_s")
+  // TODO
 }
 
 register = function () {
   navigationMenuToggle("register_s")
+  // TODO
 }
 
 navigationMenuToggle = (activeMenu) => {
