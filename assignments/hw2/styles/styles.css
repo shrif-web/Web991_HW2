@@ -367,7 +367,14 @@ body.dark-mode #bottom-navbar>div>ul>li:hover {
   }
 
   #panelButtons {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 
+  .container {
+    margin-top: 10px;
+  }
+
+  #dataGrid {
+    width: 300px;
+  }
 }
