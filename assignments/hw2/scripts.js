@@ -114,7 +114,7 @@ loadSmallTable = (data) => {
       </tr>
       <tr>
           <td><b>نام تیم</b></td>
-          <td>${data[i].name}</td>
+          <td style="color: purple"><b>${data[i].name}</b></td>
       </tr>
       <tr>
           <td><b>نام دانشگاه و کشور</b></td>
@@ -122,7 +122,7 @@ loadSmallTable = (data) => {
       </tr>
       <tr>
           <td><b>امتیاز</b></td>
-          <td>${data[i].score}</td>
+          <td style="color: purple"><b>${data[i].score}</b></td>
       </tr>
       </tbody>
   </table>`;
