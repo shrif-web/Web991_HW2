@@ -34,7 +34,6 @@
         url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.woff') format('woff'),
         url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.ttf') format('truetype');
     font-weight: normal;
-    unicode-range: U+30-39;
 }
 
 @font-face {
@@ -55,6 +54,16 @@
     font-weight: 900;
 }
 
+@font-face {
+    font-family: Yekan;
+    src: url("../assets/yekan.eot");
+    src: url("../assets/yekan.eot?#iefix") format("embedded-opentype"),
+        url("../assets/yekan.woff") format("woff"),
+        url("../assets/yekan.ttf") format("truetype");
+    font-weight: normal;
+    unicode-range: U+30-39;
+}
+
 * {
-    font-family: Sahel, 'Samim', Shabnam, 'Courier New', Courier, monospace;
+    font-family: Yekan, Sahel, 'Samim', Shabnam, 'Courier New', Courier, monospace;
 }
