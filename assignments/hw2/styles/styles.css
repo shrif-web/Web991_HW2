@@ -357,4 +357,9 @@ body.dark-mode #bottom-navbar>div>ul>li {
     height: 65px;
     box-shadow: 0 -0.15rem 1rem rgba(0, 0, 0, .10) !important;
   }
+
+  #panelButtons {
+    margin-bottom: 100px;
+  }
+
 }
