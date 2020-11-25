@@ -15,6 +15,7 @@
         url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.woff') format('woff'),
         url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim.ttf') format('truetype');
     font-weight: normal;
+
 }
 
 @font-face {
@@ -24,7 +25,6 @@
         url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.woff') format('woff'),
         url('https://cdn.fontcdn.ir/Font/Persian/Samim/Samim-Bold.ttf') format('truetype');
     font-weight: bold;
-    unicode-range: U+30-39;
 }
 
 @font-face {
@@ -34,6 +34,7 @@
         url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.woff') format('woff'),
         url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.ttf') format('truetype');
     font-weight: normal;
+    unicode-range: U+30-39;
 }
 
 @font-face {
@@ -55,5 +56,5 @@
 }
 
 * {
-    font-family: Sahel, Shabnam, 'Samim', 'Courier New', Courier, monospace;
+    font-family: Sahel, 'Samim', Shabnam, 'Courier New', Courier, monospace;
 }

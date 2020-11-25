@@ -39,9 +39,9 @@ function toggleDarkMode() {
 }
 
 toggleValue = (template, value1, value2) => {
-  return template.includes(value1)
-    ? template.replace(value1, value2)
-    : template.replace(value2, value1);
+  return template.includes(value1) ?
+    template.replace(value1, value2) :
+    template.replace(value2, value1);
 };
 
 fillGrid = function () {
@@ -50,10 +50,10 @@ fillGrid = function () {
   //
   let template = "";
   for (let i = 0; i < 20; i++) {
-    template += `<span class="card" style="width: 15rem;">
+    template += `<span class="card" style="width: auto; min-width: 150px">
   <img class="card-img-top" src="./assets/multi_logo_200x200.png" alt="Card image cap">
   <div class="card-body">
-    <p class="card-text">Card ${i + 1}</p>
+    <p class="card-text">کارت ${i + 1}</p>
   </div>
 </span>`;
   }
@@ -94,8 +94,7 @@ loadTable = () => {
 };
 
 function getTableData() {
-  return [
-    {
+  return [{
       name: "کوشا‌ جان",
       ranking: 1,
       from: "دانشگاه صنعتی شریف، ایران",
@@ -158,46 +157,34 @@ hideSidebar = function () {
   hide_button.style.display = "none";
 };
 
-homepage = function(){
-  let homepage_s = document.getElementById("homepage_s")
-  let login_s = document.getElementById("login_s")
-  let register_s = document.getElementById("register_s")
-  let data_s = document.getElementById("datapage_s")
-  homepage_s.classList.add("active")
-  login_s.classList.remove("active")
-  register_s.classList.remove("active")
-  data_s.classList.remove("active")
+homepage = function () {
+  navigationMenuToggle("homepage_s")
 }
 
-data = function(){
-  let homepage_s = document.getElementById("homepage_s")
-  let login_s = document.getElementById("login_s")
-  let register_s = document.getElementById("register_s")
-  let data_s = document.getElementById("datapage_s")
-  data_s.classList.add("active")
-  login_s.classList.remove("active")
-  register_s.classList.remove("active")
-  homepage_s.classList.remove("active")
+data = function () {
+  navigationMenuToggle("datapage_s")
 }
 
-login = function(){
-  let homepage_s = document.getElementById("homepage_s")
-  let login_s = document.getElementById("login_s")
-  let register_s = document.getElementById("register_s")
-  let data_s = document.getElementById("datapage_s")
-  login_s.classList.add("active")
-  homepage_s.classList.remove("active")
-  register_s.classList.remove("active")
-  data_s.classList.remove("active")
+login = function () {
+  navigationMenuToggle("login_s")
 }
 
-register = function(){
+register = function () {
+  navigationMenuToggle("register_s")
+}
+
+navigationMenuToggle = (activeMenu) => {
   let homepage_s = document.getElementById("homepage_s")
   let login_s = document.getElementById("login_s")
   let register_s = document.getElementById("register_s")
   let data_s = document.getElementById("datapage_s")
-  register_s.classList.add("active")
-  login_s.classList.remove("active")
-  homepage_s.classList.remove("active")
-  data_s.classList.remove("active")
+
+  let buttonsArr = [homepage_s, login_s, register_s, data_s]
+  for (elm of buttonsArr) {
+    if (elm.id === activeMenu) {
+      elm.classList.add("active")
+    } else {
+      elm.classList.remove("active")
+    }
+  }
 }
