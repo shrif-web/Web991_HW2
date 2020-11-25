@@ -234,3 +234,22 @@ body.dark-mode #image-dark {
 #logregdiv {
     right: 300px;
 }
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #a20101 !important;
+    background-color: #a20101 !important;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.2) !important;
+}
+
+body.dark-mode #dark-btn-label {
+    color: #bd4040;
+    border-color: #bd4040;
+}
+
+.custom-control{
+    margin-top: 15px;
+}
